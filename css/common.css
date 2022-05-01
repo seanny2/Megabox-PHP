@@ -7,6 +7,8 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+input {border:none; background-color: transparent;}
+input:focus {outline:none;}
 body {
     letter-spacing: 0;
     line-height: 1.5;
@@ -19,8 +21,8 @@ body {
 
 /* contents max-width -> wrapping */
 .wrap {
-    width: 100%;
-    max-width: 1100px;
+    position: relative;
+    width: 1100px;
     height: 100%;
     margin: 0 auto;
 }
@@ -55,8 +57,9 @@ body {
     cursor: pointer;
 }
 .main_bg #logo {
+    position: absolute;
     top: 50%;
-    left: 50%;
+    left: 550px;
     transform: translate(-50%, -50%);
     background: url(/img/header/logo_main-bg.png) center center no-repeat;
     cursor: pointer;
@@ -84,7 +87,7 @@ body {
     right: 0;
     background: url(/img/header/mymegabox_no-bg.png) center center no-repeat;
 }
-.no_bg #logo a {
+.no_bg #logo {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -99,13 +102,14 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    min-width: 1100px;
     height: 91px;
     z-index: 10;
 }
 header #first-line {
     padding-top: 15px;
     padding-bottom: 7px;
-    font-size: 13px;
+    font-size: 0.8667em;
     display: flex;
     justify-content: space-between;
 }

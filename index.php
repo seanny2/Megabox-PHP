@@ -22,21 +22,41 @@
         <div class="wrap">
             <section id="boxoffice">
                 <div id="boxoffice_title">
-                    <h5>박스오피스</h5>
-                    <a href="">더 많은 영화보기 +</a>
+                    <a href="" title="박스오피스">박스오피스</a>
+                    <a href="" title="더 많은 영화보기">더 많은 영화보기</a>
                 </div>
-                <article id="boxoffice_rank">
+                <article id="boxoffice_list">
                     <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                    <?php
+                        for($i = 0; $i < 4; $i++) {
+                            $rank = $i + 1;
+                            echo "<li>";
+                                echo "<div class='boxoffice_poster'>";
+                                    echo "<div class='boxoffice_rank'>";
+                                        echo $rank;
+                                    echo "</div>";
+                                    echo "<img src='' alt=''>";
+                                    echo "<a href='' class='metadata'>";
+                                        echo "<div class='summary'>{$rank}등 영화 줄거리</div>";
+                                        echo "<div class='evaluation'>";
+                                            echo "<p>관람평</p>";
+                                            echo "<p>{$rank}</p>";
+                                        echo "</div>";
+                                    echo "</a>";
+                                echo "</div>";
+                                echo "<div class='btn_util'>";
+                                    echo "<a href=''>{$rank}</a>";
+                                    echo "<a href='' title='영화 예매하기'>예매</a>";
+                                echo "</div>";
+                            echo "</li>";
+                        }
+                    ?>
                     </ul>
                 </article>
                 <ul id="search-link">
                     <li>
                         <form action="" method="post">
-                            <input type="text" placehold="영화명을 입력해 주세요">
+                            <input type="text" placeholder="영화명을 입력해 주세요">
                             <button type="submit"></button>
                         </form>
                     </li>
@@ -51,6 +71,9 @@
                     </li>
                 </ul>
             </section>
+            <div id="moving_mouse">
+                <img src="/img/main/ico_mouse.png" alt="">
+            </div>
         </div>
     </section>
     <section id="benefit">
