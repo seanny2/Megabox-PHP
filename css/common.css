@@ -1,0 +1,209 @@
+/* css reset */
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    letter-spacing: 0;
+    line-height: 1.5;
+    font-size: 15px;
+    color: #444;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+
+/* contents max-width -> wrapping */
+.wrap {
+    width: 100%;
+    max-width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* main page -> header's background color */
+.main_bg {
+    background-color: rgba(0,0,0,.3);
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    color: #fff;
+}
+.main_bg #first-line a {
+    color: #888;
+}
+.main_bg #second-line #link-icon a:nth-child(1){
+    left: 0;
+    background: url(/img/header/sitemap_main-bg.png) center center no-repeat;
+}
+.main_bg #second-line #link-icon a:nth-child(2){
+    left: 40px;
+    background: url(/img/header/search_main-bg.png) center center no-repeat;
+}
+.main_bg #second-line #link-icon a:nth-child(3){
+    right: 40px;
+    background: url(/img/header/schedule_main-bg.png) center center no-repeat;
+}
+.main_bg #second-line #link-icon a:nth-child(4){
+    right: 0;
+    background: url(/img/header/mymegabox_main-bg.png) center center no-repeat;
+}
+.main_bg #second-line #categories a {
+    color: white;
+    cursor: pointer;
+}
+.main_bg #logo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(/img/header/logo_main-bg.png) center center no-repeat;
+    cursor: pointer;
+}
+
+/* other page */
+.no_bg {
+    background: #fff;
+    border-bottom: 1px solid #351f67;
+    color: #666;
+}
+.no_bg #second-line #link-icon a:nth-child(1){
+    left: 0;
+    background: url(/img/header/sitemap_no-bg.png) center center no-repeat;
+}
+.no_bg #second-line #link-icon a:nth-child(2){
+    left: 40px;
+    background: url(/img/header/search_no-bg.png) center center no-repeat;
+}
+.no_bg #second-line #link-icon a:nth-child(3){
+    right: 40px;
+    background: url(/img/header/schedule_no-bg.png) center center no-repeat;
+}
+.no_bg #second-line #link-icon a:nth-child(4){
+    right: 0;
+    background: url(/img/header/mymegabox_no-bg.png) center center no-repeat;
+}
+.no_bg #logo a {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(/img/header/logo_no-bg.png) center center no-repeat;
+    cursor: pointer;
+}
+
+
+/* basic header structure */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 91px;
+    z-index: 10;
+}
+header #first-line {
+    padding-top: 15px;
+    padding-bottom: 7px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+header #first-line #left-link a {
+    margin-right: 20px
+}
+header #first-line #right-link a {
+    margin-left: 20px
+}
+
+header #second-line {
+    height: auto;
+    position: relative;
+}
+header #second-line #link-icon {
+    height: 100%;
+}
+header #second-line #link-icon a{
+    display: block;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+}
+header #second-line #categories {
+    width:100%;
+    position: absolute;
+    top: 7px;
+}
+header #second-line #categories ul {
+    display: flex;
+    overflow: hidden;
+}
+header #second-line #categories ul li > a {
+    position: absolute;
+    z-index: 6;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 12px;
+}
+header #second-line #categories ul > li:nth-child(1) > a {
+    left: 166px;
+}
+header #second-line #categories ul > li:nth-child(2) > a {
+    left: 256px;
+}
+header #second-line #categories ul > li:nth-child(3) > a {
+    left: 345px;
+}
+header #second-line #categories ul > li:nth-child(4) > a {
+    right: 347px;
+}
+header #second-line #categories ul > li:nth-child(5) > a {
+    right: 241px;
+}
+header #second-line #categories ul > li:nth-child(6) > a {
+    right: 150px;
+}
+
+header #second-line #categories ul > li > .sub_menu {
+    display: none;
+    position: absolute;
+    padding-top: 40px;
+    width: 100%;
+    height: 84px;
+    z-index: 5;
+}
+header #second-line #categories ul > li:hover .sub_menu {
+    display: block;
+}
+header #second-line #categories ul > li:hover > a {
+    border-bottom: 3px solid #fff;
+}
+header #second-line #categories ul > li:nth-child(1) > .sub_menu {
+    padding-left: 70px;
+}
+header #second-line #categories ul > li:nth-child(2) > .sub_menu {
+    padding-left: 106px;
+}
+header #second-line #categories ul > li:nth-child(3) > .sub_menu {
+    padding-left: 300px;
+}
+header #second-line #categories ul > li:nth-child(4) > .sub_menu {
+    padding-left: 588px;
+}
+header #second-line #categories ul > li:nth-child(6) > .sub_menu {
+    padding-left: 834px;
+}
+header #second-line #categories ul > li > .sub_menu > a {
+    position: initial;
+    margin: 0 10px;
+    line-height: 44px;
+    font-weight: bold;
+}
+
+header #logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 47px;
+}
