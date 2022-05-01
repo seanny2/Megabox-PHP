@@ -123,6 +123,7 @@
                 <li><a href=""></a></li>
                 <li><a href=""></a></li>
                 <li><a href=""></a></li>
+                <li><a href=""></a></li>
             </ul>
         </div>
         <div id="info_notice">
@@ -144,7 +145,7 @@
                 <li><a href="">1:1 문의</a></li>
                 <li><a href="">단체/대관문의</a></li>
                 <li><a href="">분실물 문의/접수</a></li>
-                <li><a href="">더 부티크 프라이빗<br />대관예매</a></li>
+                <li><a href="">더 부티크 프라이빗 대관예매</a></li>
             </ul>
         </div>
     </section>
