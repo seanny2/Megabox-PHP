@@ -12,8 +12,10 @@
 </div>
 <div id="second-line">
     <div id="link-icon">
-        <a href="" title="사이트맵"></a>
-        <a href="" title="검색"></a>
+        <input type="radio" id ="sitemap" name="menu">
+        <label for="sitemap"></label>
+        <input type="radio" id ="search" name="menu">
+        <label for="search"></label>
         <a href="" title="상영시간표"></a>
         <a href="" title="나의 메가박스"></a>
     </div>

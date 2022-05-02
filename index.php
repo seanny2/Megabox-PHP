@@ -108,7 +108,32 @@
                 <a href="">큐레이션 더보기</a>
             </div>
             <article id="curation_container">
-
+                <div id="curr_curation">
+                    <div id="curation_img">
+                        <a href=""></a>
+                        <div>
+                            <a href="">상세정보</a>
+                            <a href="">상영예정</a>
+                        </div>
+                    </div>
+                    <div id="curation_info">
+                        <div id="curation_tag">#클래식소사이어티</div>
+                        <div id="curation_title"></div>
+                        <div id="curation_summary"></div>
+                    </div>
+                </div>
+                <ul id="curation_list">
+                <?php
+                    for($i = 0; $i < 4; $i++) {
+                        echo "<li>";
+                            echo "<div>";
+                                echo "<img src='' alt=''>";
+                            echo "</div>";
+                            echo "<p>{$i}</p>";
+                        echo "</li>";
+                    }
+                ?>
+                </ul>
             </article>
         </div>
     </section>

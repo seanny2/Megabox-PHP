@@ -452,6 +452,117 @@
     background: url(/img/main/ico_plus_grey.png) 0 0 repeat;
     margin: 2px 0 0 5px;
 }
+#curation_container {
+    position: relative;
+    width: 100%;
+    height: 587.5px;
+}
+#curation_container #curr_curation {
+    display: flex;
+    justify-content: space-between;
+    height: 490px;
+}
+#curation_container #curr_curation #curation_img {
+    width: 300px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+#curation_container #curr_curation #curation_img > a {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5) url(/img/main/ico_curation_bg.png) no-repeat center;
+    border-radius: 15px;
+    background-size: 48px 48px;
+}
+#curation_container #curr_curation #curation_img div {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+#curation_container #curr_curation #curation_img div a {
+    width: 145px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+}
+#curation_container #curr_curation #curation_img div a:first-child {
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background-color: transparent;
+}
+#curation_container #curr_curation #curation_img div a:last-child {
+    color: #fff;
+    border-radius: 4px;
+    background-color: #037b94;;
+}
+#curation_container #curr_curation #curation_info {
+    width: 730px;
+    height: 100%;
+}
+#curation_container #curr_curation #curation_info #curation_tag {
+    font-size: 20px;
+    color: #fff;
+    padding-bottom: 10px;
+    height: 32px;
+}
+#curation_container #curr_curation #curation_info #curation_title {
+    border-bottom: 1px solid #474681;
+    color: #fff;
+    font-size: 24px;
+    height: 30px;
+}
+#curation_container #curr_curation #curation_info #curation_title #curation_summary {
+    width: 100%;
+    height: 192px;
+    color: #fff;
+}
+#curation_container #curation_list {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 730px;
+    height: 277.5px;
+    display: flex;
+    justify-content: space-between;
+}
+#curation_container #curation_list li {
+    width: 170px;
+    height: 100%;
+}
+#curation_container #curation_list li div {
+    width: 100%;
+    height: 244px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0, 0.5);
+    position: relative;
+}
+#curation_container #curation_list li div img {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+}
+#curation_container #curation_list li div img[src=""] { 
+    content: url(/img/main/ico_curation_bg.png);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#curation_container #curation_list li p {
+    width: 100%;
+    height: 32.5px;
+    padding-top: 10px;
+    color: #fff;
+    text-align: center;
+}
 
 /* information section */
 #information {
