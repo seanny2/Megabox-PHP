@@ -10,9 +10,7 @@
 </head>
 <body>
     <header class="main_bg">
-        <div class="wrap">
-            <?php include("./header.php"); ?>
-        </div>
+        <?php include("./header.php"); ?>
     </header>
     <section id="main">
         <div id="bg">
@@ -84,7 +82,26 @@
             </div>
             <article id="benefits_ad">
                 <div id="benefits_slider">
-
+                    <div id="slider_left">
+                        <ul id="slider_bottom-to-top">
+                            <li><img src="/img/main/slider_btt_1.jpg" alt=""></li>
+                            <li><img src="/img/main/slider_btt_2.jpg" alt=""></li>
+                            <li><img src="/img/main/slider_btt_3.jpg" alt=""></li>
+                            <li><img src="/img/main/slider_btt_4.jpg" alt=""></li>
+                            <li><img src="/img/main/slider_btt_5.jpg" alt=""></li>
+                            <li><img src="/img/main/slider_btt_6.jpg" alt=""></li>
+                        </ul>
+                    </div>
+                    <div id="slider_right">
+                        <ul id="slider_right-to-left">
+                            <li><img src="/img/main/slider_rtl_1.jpg" alt=""></li>
+                            <li><img src="/img/main/slider_rtl_2.jpg" alt=""></li>
+                            <li><img src="/img/main/slider_rtl_3.jpg" alt=""></li>
+                            <li><img src="/img/main/slider_rtl_4.jpg" alt=""></li>
+                            <li><img src="/img/main/slider_rtl_5.jpg" alt=""></li>
+                            <li><img src="/img/main/slider_rtl_6.jpg" alt=""></li>
+                        </ul>
+                    </div>
                 </div>
                 <div id="benefits_banner">
                     <img src="/img/main/benefits_banner_1.jpg" alt="">
@@ -110,26 +127,35 @@
             <article id="curation_container">
                 <div id="curr_curation">
                     <div id="curation_img">
-                        <a href=""></a>
+                        <a href=""><img src="/img/main/curation_img.jpg" alt=""></a>
                         <div>
                             <a href="">상세정보</a>
-                            <a href="">상영예정</a>
+                            <a href="">예매</a>
                         </div>
                     </div>
                     <div id="curation_info">
                         <div id="curation_tag">#클래식소사이어티</div>
-                        <div id="curation_title"></div>
-                        <div id="curation_summary"></div>
+                        <div id="curation_title">[오페라] 신데렐라 @The Met</div>
+                        <div id="curation_summary">
+                            믿고 보는 연출가 로랑 펠리의 천재적인 희극성.<br /></br />
+                            강단 있고 개성 넘치는 저음의 신데렐라가 보여주는 매력!!<br/><br />
+                            [상영 정보]<br />
+                            상영지점 : 센트럴 / 코엑스 / 상암월드컵경기장 / 성수 / 분당 / 킨텍스 / 대전신세계 아트앤사이언스<br />
+                            상영일정 : 2022년 4월 5일(화) ~ 5월 14일(토) / 화 19:00, 토 10:00<br />
+                            러닝타임 : 111분*인터미션 없음
+                        </div>
                     </div>
                 </div>
                 <ul id="curation_list">
                 <?php
+                    $list = array("복지식당", "중경삼림", "우연과 상상", "파리의 피아니스트: 후지...");
                     for($i = 0; $i < 4; $i++) {
+                        $img_src = $i + 1;
                         echo "<li>";
                             echo "<div>";
-                                echo "<img src='' alt=''>";
+                                echo "<a href=''><img src='/img/main/curation_list_{$img_src}.jpg' alt=''></a>";
                             echo "</div>";
-                            echo "<p>{$i}</p>";
+                            echo "<p>{$list[$i]}</p>";
                         echo "</li>";
                     }
                 ?>

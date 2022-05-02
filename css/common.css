@@ -36,25 +36,28 @@ body {
 .main_bg #first-line a {
     color: #888;
 }
-.main_bg #second-line #link-icon label:nth-child(2){
+.main_bg #second-line #link-icon label:nth-child(1){
     left: 0;
     background: url(/img/header/sitemap_main-bg.png) center center no-repeat;
 }
-.main_bg #second-line #link-icon label:nth-child(4){
+.main_bg #second-line #link-icon a:nth-child(2){
     left: 40px;
     background: url(/img/header/search_main-bg.png) center center no-repeat;
 }
-.main_bg #second-line #link-icon a:nth-child(5){
+.main_bg #second-line #link-icon a:nth-child(3){
     right: 40px;
     background: url(/img/header/schedule_main-bg.png) center center no-repeat;
 }
-.main_bg #second-line #link-icon a:nth-child(6){
+.main_bg #second-line #link-icon a:nth-child(4){
     right: 0;
     background: url(/img/header/mymegabox_main-bg.png) center center no-repeat;
 }
 .main_bg #second-line #categories a {
     color: white;
     cursor: pointer;
+}
+.main_bg #second-line #categories ul > li:hover > a {
+    border-bottom: 3px solid #fff;
 }
 .main_bg #logo {
     position: absolute;
@@ -69,23 +72,32 @@ body {
 .no_bg {
     background: #fff;
     border-bottom: 1px solid #351f67;
+}
+.no_bg #first-line a {
     color: #666;
 }
-.no_bg #second-line #link-icon label:nth-child(2){
+.no_bg #second-line #link-icon label:nth-child(1){
     left: 0;
     background: url(/img/header/sitemap_no-bg.png) center center no-repeat;
 }
-.no_bg #second-line #link-icon label:nth-child(4){
+.no_bg #second-line #link-icon a:nth-child(2){
     left: 40px;
     background: url(/img/header/search_no-bg.png) center center no-repeat;
 }
-.no_bg #second-line #link-icon a:nth-child(5){
+.no_bg #second-line #link-icon a:nth-child(3){
     right: 40px;
     background: url(/img/header/schedule_no-bg.png) center center no-repeat;
 }
-.no_bg #second-line #link-icon a:nth-child(6){
+.no_bg #second-line #link-icon a:nth-child(4){
     right: 0;
     background: url(/img/header/mymegabox_no-bg.png) center center no-repeat;
+}
+.no_bg #second-line #categories a {
+    color: black;
+    cursor: pointer;
+}
+.no_bg #second-line #categories ul > li:hover > a {
+    border-bottom: 4px solid #619caf;
 }
 .no_bg #logo {
     top: 50%;
@@ -105,6 +117,15 @@ header {
     min-width: 1100px;
     height: 91px;
     z-index: 10;
+}
+header input {
+    display: none;
+}
+header input[id="sitemap_btn"]:checked + .wrap #second-line #link-icon label {
+    background: url(/img/header/ico_sitemap_main-bg_close.png);
+}
+header input[id="sitemap_btn"]:checked ~ #sitemap {
+    display: block;
 }
 header #first-line {
     padding-top: 15px;
@@ -126,13 +147,6 @@ header #second-line {
 }
 header #second-line #link-icon {
     height: 100%;
-}
-header #second-line #link-icon input {
-    display: none;
-}
-header #second-line #link-icon input[id="sitemap"]:checked + label,
-header #second-line #link-icon input[id="search"]:checked + label {
-    background: url(/img/header/ico_sitemap_main-bg_close.png);
 }
 header #second-line #link-icon label,
 header #second-line #link-icon a {
@@ -188,9 +202,6 @@ header #second-line #categories ul > li > .sub_menu {
 header #second-line #categories ul > li:hover .sub_menu {
     display: block;
 }
-header #second-line #categories ul > li:hover > a {
-    border-bottom: 3px solid #fff;
-}
 header #second-line #categories ul > li:nth-child(1) > .sub_menu {
     padding-left: 70px;
 }
@@ -218,6 +229,77 @@ header #logo {
     left: 0;
     width: 140px;
     height: 47px;
+}
+header #logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+header #sitemap {
+    display: none;
+    background-color: #333;
+    width: 100%;
+    min-width: 1100px;
+    height: 750px;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 90px;
+}
+header #sitemap h1 {
+    width: 100%;
+    padding: 45px 0 15px 0;
+    font-size: 23px;
+    letter-spacing: 0;
+    color: #fff;
+}
+header #sitemap #sitemap_list dl {
+    float: left;
+    width: 159px;
+    display: inline-flex;
+    flex-direction: column;
+    margin-right: 29px;
+    max-height: 270px;
+    overflow: visible;
+}
+header #sitemap #sitemap_list dl:nth-child(6) {
+    margin: 0;
+}
+header #sitemap #sitemap_list dl dt {
+    width: 100%;
+    height: 48px;
+    font-size: 17px;
+    color: #fff;
+    line-height: 48px;
+    text-align: center;
+    border: 1px solid rgba(68, 68, 68, 0.5);
+    border-width: 1px 0;
+    font-weight: bold;
+}
+header #sitemap #sitemap_list dl dd {
+    display: inline-flex;
+    width: 100%;
+}
+header #sitemap #sitemap_list dl dd ul {
+    display: inline-flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+}
+header #sitemap #sitemap_list dl dd ul li {
+    width: 100%;
+    height: 34.5px;
+    padding-top: 18px;
+    text-align: center;
+}
+header #sitemap #sitemap_list dl dd ul li a {
+    color: #bbb;
+    font-size: 15px;
+    cursor: pointer;
+}
+header #sitemap #sitemap_list dl dd ul li a:hover {
+    color: #339eb2;
+    text-decoration: underline;
 }
 
 /* footer */

@@ -358,9 +358,81 @@
     position: relative;
 }
 #benefits #benefits_ad #benefits_slider {
-    width: 934px;
+    width: calc(385px*7);
     height: 325px;
-    background-color: hotpink;
+    display: flex;
+}
+#benefits #benefits_ad #benefits_slider #slider_left {
+    width: 300px;
+    height: 230px;
+    overflow: hidden;
+}
+#benefits #benefits_ad #benefits_slider #slider_left #slider_bottom-to-top {
+    width: 300px;
+    height: calc(230px*6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #fff;
+    animation: slider_btt 30s ease-in infinite normal;
+}
+@keyframes slider_btt {
+    0% {transform: translateY(calc(-230px*0));}
+    14.65% {transform: translateY(calc(-230px*0));}
+    16.66% {transform: translateY(calc(-230px*1));}
+    31.31% {transform: translateY(calc(-230px*1));}
+    33.32% {transform: translateY(calc(-230px*2));}
+    47.97% {transform: translateY(calc(-230px*2));}
+    49.98% {transform: translateY(calc(-230px*3));}
+    64.63% {transform: translateY(calc(-230px*3));}
+    66.64% {transform: translateY(calc(-230px*4));}
+    81.31% {transform: translateY(calc(-230px*4));}
+    83.32% {transform: translateY(calc(-230px*5));}
+    97.99% {transform: translateY(calc(-230px*5));}
+    100% {transform: translateY(calc(-230px*6));}
+}
+#benefits #benefits_ad #benefits_slider #slider_left #slider_bottom-to-top li {
+    display: block;
+    width: 300px;
+    height: 230px;
+}
+#benefits #benefits_ad #benefits_slider #slider_left #slider_bottom-to-top li img {
+    height: 100%;
+}
+#benefits #benefits_ad #benefits_slider #slider_right {
+    width: 385px;
+    height: 325px;
+    overflow: hidden;
+}
+#benefits #benefits_ad #benefits_slider #slider_right #slider_right-to-left {
+    width: calc(385px*6);
+    height: 325px;
+    display: flex;
+    transform: translateX(calc(-385px*1));
+    animation: slider_rtl 30s ease-out infinite normal;
+}
+@keyframes slider_rtl {
+    0% {transform: translateX(calc(-385px*0));}
+    14.65% {transform: translateX(calc(-385px*0));}
+    16.66% {transform: translateX(calc(-385px*1));}
+    31.31% {transform: translateX(calc(-385px*1));}
+    33.32% {transform: translateX(calc(-385px*2));}
+    47.97% {transform: translateX(calc(-385px*2));}
+    49.98% {transform: translateX(calc(-385px*3));}
+    64.63% {transform: translateX(calc(-385px*3));}
+    66.64% {transform: translateX(calc(-385px*4));}
+    81.31% {transform: translateX(calc(-385px*4));}
+    83.32% {transform: translateX(calc(-385px*5));}
+    97.99% {transform: translateX(calc(-385px*5));}
+    100% {transform: translateX(calc(-385px*6));}
+}
+#benefits #benefits_ad #benefits_slider #slider_right #slider_right-to-left li {
+    width: 385px;
+    height: 325px;
+    float: left;
+}
+#benefits #benefits_ad #benefits_slider #slider_right-to-left li img {
+    width: 100%;
 }
 #benefits #benefits_ad #benefits_banner {
     width: 100%;
@@ -469,6 +541,16 @@
     flex-direction: column;
     justify-content: space-between;
     margin-left: 20px;
+    position: relative;
+}
+#curation_container #curr_curation #curation_img::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    background: url(/img/main/ico_curation_bg_classic.png) no-repeat center;
+    width: 123px;
+    height: 135px;
 }
 #curation_container #curr_curation #curation_img > a {
     display: inline-flex;
@@ -510,19 +592,20 @@
 #curation_container #curr_curation #curation_info #curation_tag {
     font-size: 20px;
     color: #fff;
-    padding-bottom: 10px;
     height: 32px;
 }
 #curation_container #curr_curation #curation_info #curation_title {
     border-bottom: 1px solid #474681;
     color: #fff;
-    font-size: 24px;
-    height: 30px;
+    font-size: 36px;
+    padding-bottom: 20px;
+    font-weight: bold;
 }
-#curation_container #curr_curation #curation_info #curation_title #curation_summary {
+#curation_container #curr_curation #curation_info #curation_summary {
     width: 100%;
     height: 192px;
     color: #fff;
+    padding: 15px 0;
 }
 #curation_container #curation_list {
     position: absolute;
@@ -544,10 +627,22 @@
     background-color: rgba(0,0,0, 0.5);
     position: relative;
 }
+#curation_container #curation_list li div::before {
+    content: "";
+    background: url(/img/main/ico_curation_list_film.png) no-repeat center;
+    width: 35px;
+    height: 50px;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+}
+#curation_container #curation_list li div a {
+    display: inline-flex;
+    width: 100%;
+}
 #curation_container #curation_list li div img {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto;
+    width: 100%;
+    border-radius: 10px;
 }
 #curation_container #curation_list li div img[src=""] { 
     content: url(/img/main/ico_curation_bg.png);
@@ -555,6 +650,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
 }
 #curation_container #curation_list li p {
     width: 100%;
