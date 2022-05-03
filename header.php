@@ -22,9 +22,9 @@
         <nav id="categories">
             <ul>
                 <li>
-                    <a href="/pages/Movie/All.php" title="영화">영화</a>
+                    <a href="/pages/movie/movie.php" title="영화">영화</a>
                     <div class="sub_menu">
-                        <a href="" title="전체영화">전체영화</a>
+                        <a href="/pages/movie/movie.php" title="전체영화">전체영화</a>
                         <a href="" title="큐레이션">큐레이션</a>
                         <a href="" title="무비포스트">무비포스트</a>
                     </div>
