@@ -31,47 +31,73 @@
                     <li class=<?=$mpage==4 ? 'menu_selected':NULL?>><a href="/pages/movie/movie.php?mpage=4">필름소사이어티</a></li>
                     <li class=<?=$mpage==5 ? 'menu_selected':NULL?>><a href="/pages/movie/movie.php?mpage=5">클래식소사이어티</a></li>
                 </ul>
+                    <?php 
+                        $con = mysqli_connect("localhost", "root", "", "megabox") or die ("Can't access DB");
+
+                        $s_title = $_GET["title"] ?? NULL; 
+                        if($mpage == 1) {
+                            if($s_title) {
+                                $query = "SELECT * FROM movie where title like '%".$s_title."%'ORDER BY reservation_rate DESC" ;
+                            } else {
+                                $query = "SELECT * FROM movie ORDER BY reservation_rate DESC;";
+                            }
+                        } else if($mpage == 2) {
+                            $query = "SELECT * FROM movie where playing=0 ORDER BY reservation_rate DESC";
+                        } else if($mpage == 3) {
+                            $query = "SELECT * FROM movie where special=1 ORDER BY reservation_rate DESC";
+                        } else if($mpage == 4) {
+                            $query = "SELECT * FROM movie where society='film' ORDER BY reservation_rate DESC";
+                        } else if($mpage == 5) {
+                            $query = "SELECT * FROM movie where society='classic' ORDER BY reservation_rate DESC";
+                        }
+
+                        $result = mysqli_query($con, $query);
+                        $cnt = mysqli_num_rows($result);
+                    ?>
                 <div id="movie_search">
-                    <span><b>20</b> 개의 영화가 검색되었습니다.</span>
-                    <form id="search_form" action="">
-                        <input type="text" placeholder="영화명 검색">
+                    <span><b><?=$cnt?></b> 개의 영화가 검색되었습니다.</span>
+                    <form id="search_form" action="" method="get">
+                        <input type="text" placeholder="영화명 검색" name="title">
                         <button type="submit"></button>
                     </form>
                 </div>
                 <ul id="movie_list">
-                <?php
-                    $con = mysqli_connect("localhost", "root", "1234", "megabox") or die ("Can't access DB");
-                    // 예매율 순으로 정렬
-                    $query = "SELECT * FROM movie ORDER BY reservation_Rate DESC";
-                    $result = mysqli_query($con, $query);
-                    $rank = 1;
-                    while($row = mysqli_fetch_assoc($result)) {
-                        echo "<li>";
-                            echo "<div class='movie_poster'>";
-                                echo "<div class='movie_rank'>".$rank."</div>";
-                                echo "<img src='".$row["img_src"]."' alt=''>";
-                                echo "<a href='' class='poster_shadow'>";
-                                    echo "<div class='summary'>".$row["summary"]."</div>";
-                                    echo "<div class='evaluation'>";
-                                        echo "<p>관람평</p>";
-                                        echo "<p>".$row["like_rate"]."</p>";
+                    <?php
+                        
+                        if($cnt > 0) {
+                            $rank = 1;
+                            while($row = mysqli_fetch_assoc($result)) {
+                                echo "<li>";
+                                    echo "<div class='movie_poster'>";
+                                        echo "<div class='movie_rank'>".$rank."</div>";
+                                        echo "<img src='".$row["img_src"]."' alt=''>";
+                                        echo "<a href='' class='poster_shadow'>";
+                                            echo "<div class='summary'>".$row["summary"]."</div>";
+                                            echo "<div class='evaluation'>";
+                                                echo "<p>관람평</p>";
+                                                echo "<p>".$row["like_rate"]."</p>";
+                                            echo "</div>";
+                                        echo "</a>";
                                     echo "</div>";
-                                echo "</a>";
-                            echo "</div>";
-                            echo "<dl id='movie_metadata'>";
-                                echo "<dt>".$row["title"]."</dt>";
-                                echo "<dd>";
-                                    echo "<p>예매율 ".$row["reservation_Rate"]." %</p>";
-                                    echo "<p>개봉일 ".$row["release_Date"]."</p>";
-                                echo "</dd>";
-                            echo "</dl>";
-                            echo "<div class='btn_util'>";
-                                echo "<a href=''>".$row["like_num"]."</a>";
-                                echo "<a href='' title='영화 예매하기'>예매</a>";
-                            echo "</div>";
-                        echo "</li>";
-                        $rank++;
-                    }
+                                    echo "<dl id='movie_metadata'>";
+                                        echo "<dt>".$row["title"]."</dt>";
+                                        echo "<dd>";
+                                            echo "<p>예매율 ".$row["reservation_rate"]." %</p>";
+                                            echo "<p>개봉일 ".$row["release_date"]."</p>";
+                                        echo "</dd>";
+                                    echo "</dl>";
+                                    echo "<div class='btn_util'>";
+                                        echo "<a href=''>".$row["like_num"]."</a>";
+                                        echo "<a href='' title='영화 예매하기'>예매</a>";
+                                    echo "</div>";
+                                echo "</li>";
+                                $rank++;
+                            }
+                        } else {
+                            echo "<div id='no_result'><p>현재 상영중인 영화가 없습니다.</p></div>";
+                        }
+                        
+                        mysqli_close($con);
                     ?>
                 </ul>
             </article>
