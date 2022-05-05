@@ -226,7 +226,8 @@
     justify-content: space-between;
 }
 #movie_contents #movie_list li #movie_metadata dd p {
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
+    word-break : nowrap;
 }
 #movie_contents #movie_list li #movie_metadata dd p:first-child {
     margin-right: 7px;
@@ -274,7 +275,6 @@
     display: inline-flex;
     width: 72px;
     border: 1px solid #ebebeb;
-    
     color: #666;
     letter-spacing: -2px;
 }

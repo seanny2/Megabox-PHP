@@ -83,7 +83,9 @@
                                         echo "<dt>".$row["title"]."</dt>";
                                         echo "<dd>";
                                             echo "<p>예매율 ".$row["reservation_rate"]." %</p>";
-                                            echo "<p>개봉일 ".$row["release_date"]."</p>";
+                                            $db_date = (string)$row["release_date"];
+                                            $cut_date = explode("-", $db_date);
+                                            echo "<p>개봉일 ".$cut_date[0].".".$cut_date[1].".".$cut_date[2]."</p>";
                                         echo "</dd>";
                                     echo "</dl>";
                                     echo "<div class='btn_util'>";
