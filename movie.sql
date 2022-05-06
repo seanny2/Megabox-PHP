@@ -157,3 +157,70 @@ insert into movie (title, reservation_rate, release_date, summary, like_num, lik
     values ('극장판 엉덩이 탐정: 수플레 섬의 비밀', 1.5, '2022-05-05',
     '1년 내내 바람이 부는 ‘수플레 섬’에 괴도 유의 예고장이 도착했다! 그의 목표는 섬의 보물인 ‘바람의 길잡이’! 엉덩이 탐정과 브라운, 견공 경찰서 일행은 ‘수플레 섬’에 방문해 ‘루루’를 만난다. 늘 바깥 세상을 동경하는 ‘루루’는 하늘을 자유자재로 누비는 특별한 능력을 가지고 있다. 예고된 보름달이 뜨는 밤, 엉덩이 탐정 일행은 ‘바람의 길잡이’를 지키기 위해 나서는데… 엉덩이 탐정의 명추리가 빛나는 순간, 섬에 숨겨져 있던 비밀이 밝혀진다!'
     ,66 , 8.9, '/img/db_movie/m036.jpg', true, false, null);
+
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('암살', 0, '2015-07-22',
+    '1933년 조국이 사라진 시대 대한민국 임시정부는 일본 측에 노출되지 않은 세 명을 암살작전에 지목한다. 한국 독립군 저격수 안옥윤, 신흥무관학교 출신 속사포, 폭탄 전문가 황덕삼! 김구의 두터운 신임을 받는 임시정부 경무국 대장 염석진은 이들을 찾아 나서기 시작한다. 암살단의 타깃은 조선주둔군 사령관 카와구치 마모루와 친일파 강인국. 한편, 누군가에게 거액의 의뢰를 받은 청부살인업자 하와이 피스톨이 암살단의 뒤를 쫓는데... 친일파 암살작전을 둘러싼 이들의 예측할 수 없는 운명이 펼쳐진다!'
+    , 2000, 8.9, '/img/db_movie/m101.jpg', false, true, null);
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('불한당: 나쁜 놈들의 세상', 0, '2017-05-17',
+    '범죄조직의 1인자를 노리는 재호와 세상 무서운 것 없는 패기 넘치는 신참 현수는 교도소에서 만나 서로에게 끌리고 끈끈한 의리를 다져간다. 출소 후, 함께 권력을 차지하기 위해 의기투합하던 중, 두 사람의 숨겨왔던 야망이 조금씩 드러나고, 서로에 대해 새로운 사실을 알게 되면서 그들의 관계는 흔들리기 시작하는데… 믿는 놈을 조심하라! 믿음의 순간 배신은 이미 시작되었다!'
+    , 336, 7.7, '/img/db_movie/m102.jpg', false, true, null);
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('안시성', 0, '2018-09-19',
+    '우리는 물러서는 법을 배우지 못했다! 우리는 무릎 꿇는 법을 배우지 못했다! 우리는 항복이라는 걸 배우지 못했다! 천하를 손에 넣으려는 당 태종은 수십만 대군을 동원해 고구려의 변방 안시성을 침공한다. 20만 당나라 최강 대군 VS 5천명의 안시성 군사들. 40배의 전력 차이에도 불구하고, 안시성 성주 양만춘과 전사들은 당나라에 맞서 싸우기로 결심하는데… 동아시아 역사상 가장 위대한 승리를 이끈 안시성 전투가 시작된다!'
+    , 6100, 8.3, '/img/db_movie/m103.jpg', false, true, null);
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('극한직업', 0, '2019-01-23',
+    '낮에는 치킨장사! 밤에는 잠복근무! 지금까지 이런 수사는 없었다! 불철주야 달리고 구르지만 실적은 바닥, 급기야 해체 위기를 맞는 마약반! 더 이상 물러설 곳이 없는 팀의 맏형 고반장은 국제 범죄조직의 국내 마약 밀반입 정황을 포착하고 장형사, 마형사, 영호, 재훈까지 4명의 팀원들과 함께 잠복 수사에 나선다. 마약반은 24시간 감시를 위해 범죄조직의 아지트 앞 치킨집을 인수해 위장 창업을 하게 되고, 뜻밖의 절대미각을 지닌 마형사의 숨은 재능으로 치킨집은 일약 맛집으로 입소문이 나기 시작한다. 수사는 뒷전, 치킨장사로 눈코 뜰 새 없이 바빠진 마약반에게 어느 날 절호의 기회가 찾아오는데… 범인을 잡을 것인가, 닭을 잡을 것인가! 2019년 새해, 출동!'
+    , 11400, 8.7, '/img/db_movie/m104.jpg', false, true, null);
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('증인', 0, '2019-02-13',
+    '“목격자가 있어. 자폐아야” 신념은 잠시 접어두고 현실을 위해 속물이 되기로 마음먹은 민변 출신의 대형 로펌 변호사 ‘순호’(정우성). 파트너 변호사로 승진할 수 있는 큰 기회가 걸린 사건의 변호사로 지목되자 살인 용의자의 무죄를 입증하기 위해 유일한 목격자인 자폐 소녀 ‘지우’(김향기)를 증인으로 세우려 한다. “아저씨도 나를 이용할 겁니까?” 자기만의 세계에 빠져 의사소통이 어려운 ‘지우’. ‘순호’는 사건 당일 목격한 것을 묻기 위해 ‘지우’를 찾아가지만, 제대로 된 인사조차 나누지 못한다. 하지만 그날의 이야기를 듣기 위해 지우에게 다가가려 노력하는 ‘순호’, 시간이 흐를수록 조금씩 ‘지우’에 대해 이해하게 되지만 이제 두 사람은 법정에서 변호사와 증인으로 마주해야 하는데… 마음을 여는 순간, 진실이 눈앞에 다가왔다'
+    , 6100, 9.2, '/img/db_movie/m105.jpg', false, true, null);
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('정직한 후보', 0, '2020-02-12',
+    '어제까진 뻥쟁이, 오늘부턴 정직한 후보?! 거짓말이 제일 쉬운 3선 국회의원 ‘주상숙’에게 청천벽력이 떨어진다. 하루아침에 거짓말은 1도 할 수 없는 ‘진실의 주둥이’를 갖게 된 것! 최고의 무기인 ‘거짓말’을 잃자 그녀의 인생은 송두리째 흔들리게 되는데… 웃음 빵! 속이 뻥! 뚫리는 통쾌한 웃음 폭격이 시작된다!'
+    , 1100, 8.7, '/img/db_movie/m106.jpg', false, true, null);
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('반도', 0, '2020-07-15',
+    '전대미문의 재난 그 후 4년 폐허의 땅으로 다시 들어간다! 4년 전, 나라 전체를 휩쓸어버린 전대미문의 재난에서 가까스로 탈출했던 ‘정석’(강동원). 바깥세상으로부터 철저히 고립된 반도에 다시 들어가야 하는 피할 수 없는 제안을 받는다. 제한 시간 내에 지정된 트럭을 확보해 반도를 빠져 나와야 하는 미션을 수행하던 중 인간성을 상실한 631부대와 4년 전보다 더욱 거세진 대규모 좀비 무리가 정석 일행을 습격한다. 절체절명의 순간, 폐허가 된 땅에서 살아남은 ‘민정’(이정현) 가족의 도움으로 위기를 가까스로 모면하고 이들과 함께 반도를 탈출할 수 있는 마지막 기회를 잡기로 한다. 되돌아온 자, 살아남은 자 그리고 미쳐버린 자 필사의 사투가 시작된다!'
+    , 1600, 7.7, '/img/db_movie/m107.jpg', false, true, null);
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('모가디슈', 0, '2021-07-28',
+    '내전으로 고립된 낯선 도시, 모가디슈 지금부터 우리의 목표는 오로지 생존이다! 대한민국이 UN가입을 위해 동분서주하던 시기 1991년 소말리아의 수도 모가디슈에서는 일촉즉발의 내전이 일어난다. 통신마저 끊긴 그 곳에 고립된 대한민국 대사관의 직원과 가족들은 총알과 포탄이 빗발치는 가운데, 살아남기 위해 하루하루를 버텨낸다. 그러던 어느 날 밤, 북한 대사관의 일행들이 도움을 요청하며 문을 두드리는데… 목표는 하나, 모가디슈에서 탈출해야 한다!'
+    , 1100, 9.3, '/img/db_movie/m108.jpg', false, true, null);
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('기적', 0, '2021-09-15',
+    '오갈 수 있는 길은 기찻길밖에 없지만 정작 기차역은 없는 마을. 오늘부로 청와대에 딱 54번째 편지를 보낸 ‘준경’(박정민)의 목표는 단 하나! 바로 마을에 기차역이 생기는 것이다. 기차역은 어림없다는 원칙주의 기관사 아버지 ‘태윤’(이성민)의 반대에도 누나 ‘보경’(이수경)과 마을에 남는 걸 고집하며 왕복 5시간 통학길을 오가는 ‘준경’. 그의 엉뚱함 속 비범함을 단번에 알아본 자칭 뮤즈 ‘라희’(임윤아)와 함께 설득력 있는 편지쓰기를 위한 맞춤법 수업, 유명세를 얻기 위한 장학퀴즈 테스트, 대통령배 수학경시대회 응시까지! 오로지 기차역을 짓기 위한 ‘준경’만의 노력은 계속되는데...! 포기란 없다 기차가 서는 그날까지!'
+    , 583, 9, '/img/db_movie/m109.jpg', false, true, null);
+
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('파리, 13구', 0, '2022-05-12',
+    '화려함 속에 가려진 외로운 도시, 파리 13구. 낭만을 잃었다 생각한 그 곳에서 불현듯 사랑을 만났다. 사랑을 원하는 에밀리 사랑이 두려운 노라 사랑이 값비싼 앰버 스위트 사랑을 몰랐던 카미유 흔들리고 불안했던 그 사랑이, 우리는 전부라 생각했다. 여전히 사랑을 믿는 도시 <파리, 13구>'
+    , 56, null, '/img/db_movie/m201.jpg', true, false, "film");
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('고양이들의 아파트', 0, '2022-03-17',
+    '서울 동쪽 끝, 거대한 아파트 단지. 그곳은 오래도록 고양이들과 사람들이 함께 마음껏 뛰놀고 사랑과 기쁨을 주었던 모두의 천국이었다. 하지만 재건축을 앞두고 곧 철거될 이곳을 떠나려 하지 않는 고양이들을 걱정하는 사람들이 있다 "물어보고 싶어요. 여기 계속 살고 싶냐고" 고양이들과 사람들의 행복한 작별을 위한 아름다운 분투가 시작된다!'
+    , 158, 8.7, '/img/db_movie/m202.jpg', true, false, "film");
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('쓰리: 아직 끝나지 않았다', 0, '2022-04-21',
+    '"누군가는 이 세상을 깨끗이 만들어야 하지. 그러는 너의 세계는 어떤데?” 1979년 소비에이트연방 카자흐스탄. 최고의 수사팀에 합류하게 된 패기 넘치는 신입 수사관 ''셰르''는 마을을 뒤흔든 연쇄 살인마의 뒤를 쫓는다. 살인마와의 교묘한 심리전 속에 사건의 실마리가 점점 드러나고 새로운 사건의 혼란한 틈에 ‘셰르’의 누나 ‘디나’가 갑자기 사라지게 되는데…'
+    , 34, 7, '/img/db_movie/m203.jpg', true, false, "film");
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('위대한 계약: 파주, 책, 도시', 0, '2022-04-21',
+    '책을 만들면 구속되던 시절 책의 유토피아를 꿈꾸는 이들이 있었다 이들의 꿈에 새로운 도시를 희망한 건축가들이 동참했다 위험한 계약이라 불리던 ‘위대한 계약’ 그리고 세계 어디에도 없던 도시의 탄생! 책과 영상과 예술의 문화 허브에서 새로운 미래를 펼치다!'
+    , 39, 8.9, '/img/db_movie/m204.jpg', true, false, "film");
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('허셸프', 0, '2022-05-12',
+    '자신을 학대하던 남편과 이혼하고 홀로 어린 두 딸을 키우는 싱글맘 산드라. 임시 거처에 머물며 새로운 보금자리를 찾기 위해 노력하지만 집도 일도 구하기란 쉽지 않다. 이에 굴하지 않고 적은 비용으로 아이들과 함께 살 새로운 집을 짓기로 결심한다. 한편, 남편은 아이들의 양육권을 뺏기 위해 그녀를 고소하고 공무원들마저 그녀를 방해하기 시작하는데… 세상의 냉혹한 현실 속에서 아이들을 지키기 위한 행복한 집 짓기가 시작된다.'
+    , 15, null, '/img/db_movie/m205.jpg', true, false, "film");
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('허황옥 3일, 잃업러니 2천 년의 기억', 0, '2022-05-12',
+    '역사학계가 2천 년 전 ‘인도 공주 허황옥’의 결혼 항해를 신화나 설화로 간주하면서 김해 김씨와 허씨 등 800여만 명의 후손들은 늘 뿌리가 흔들렸고, 가야사는 물론 가야불교의 시작도 수백 년 뒤로 밀려나 버렸다. 이 영화는 아직 한 번도 시도해 보지 않았던 삼국유사 ‘인도공주 허황옥’의 3일간 신혼길 기록을 과학적인 방법으로 추적해 나가며 누구도 예측하지 못한 독특한 역사적 실체를 도출한다.'
+    , 0, null, '/img/db_movie/m206.jpg', true, false, "film");
+
+insert into movie (title, reservation_rate, release_date, summary, like_num, like_rate, img_src, playing, special, society) 
+    values ('[볼쇼이 발레 인 시네마] 파라오의 딸', 0, '2022-06-04',
+    '[상영정보] -  상영일 : 2022년 6월 4일&6일 -  러닝타임 : 170분 (인터미션 있음) [시놉시스] 이집트를 여행하던 중, ''윌슨''경은 모래폭풍을 만나게 되고 이집트의 가장 강력한 파라오의 딸인 ‘아스피시아’가 묻혀 있는 가까운 피라미드로 피신하게 된다. 아편 연기가 스며 들어 잠이 들 때, ‘아스피시아’는 살아나고 그녀를 향한 ''윌슨''경의 열정은 그를 환상적인 여정으로 데려가는데… [작품 정보] 프랑스 안무가 피에르 라코트는 20여 년 전 볼쇼이 발레단만을 위해 잊혀졌던 걸작인 마리우스 프티파의 파라오의 딸을 훌륭하게 부활시켰다. 이국적인 배경, 화려한 춤, 그리고 볼쇼이 극단 전원을 위해 안무를 연출한 장면들이 포함된 이집트 배경의 이 놀라운 작품은 볼쇼이 레퍼토리 중 가장 주목할 만한 작품 중 하나이다. 수입/배급 : (주)위즈온센'
+    , 254, null, '/img/db_movie/m207.jpg', true, false, "classic")

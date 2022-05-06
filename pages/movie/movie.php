@@ -37,18 +37,34 @@
                         $s_title = $_GET["title"] ?? NULL; 
                         if($mpage == 1) {
                             if($s_title) {
-                                $query = "SELECT * FROM movie where title like '%".$s_title."%'ORDER BY reservation_rate DESC" ;
+                                $query = "SELECT * FROM movie where title like '%{$s_title}%'ORDER BY reservation_rate DESC" ;
                             } else {
                                 $query = "SELECT * FROM movie ORDER BY reservation_rate DESC;";
                             }
                         } else if($mpage == 2) {
-                            $query = "SELECT * FROM movie where playing=0 ORDER BY reservation_rate DESC";
+                            if($s_title) {
+                                $query = "SELECT * FROM movie where playing=0 and special=0 and title like '%{$s_title}%' ";
+                            } else {
+                                $query = "SELECT * FROM movie where playing=0 and special=0 ORDER BY reservation_rate DESC";
+                            }
                         } else if($mpage == 3) {
-                            $query = "SELECT * FROM movie where special=1 ORDER BY reservation_rate DESC";
+                            if($s_title) {
+                                $query = "SELECT * FROM movie where special=1 and title like '%{$s_title}%'";
+                            } else {
+                                $query = "SELECT * FROM movie where special=1 ORDER BY reservation_rate DESC";
+                            }
                         } else if($mpage == 4) {
-                            $query = "SELECT * FROM movie where society='film' ORDER BY reservation_rate DESC";
+                            if($s_title) {
+                                $query = "SELECT * FROM movie where society='film' and title like '%{$s_title}%'";
+                            } else {
+                                $query = "SELECT * FROM movie where society='film' ORDER BY reservation_rate DESC";   
+                            }
                         } else if($mpage == 5) {
-                            $query = "SELECT * FROM movie where society='classic' ORDER BY reservation_rate DESC";
+                            if($s_title) {
+                                $query = "SELECT * FROM movie where society='classic' and title like '%{$s_title}%'";
+                            } else {
+                                $query = "SELECT * FROM movie where society='classic' ORDER BY reservation_rate DESC";
+                            }
                         }
 
                         $result = mysqli_query($con, $query);
@@ -90,7 +106,11 @@
                                     echo "</dl>";
                                     echo "<div class='btn_util'>";
                                         echo "<a href=''>".$row["like_num"]."</a>";
-                                        echo "<a href='' title='영화 예매하기'>예매</a>";
+                                        if($row["playing"] == 1) {
+                                            echo "<a class='playing' href='' title='영화 예매하기'>예매</a>";
+                                        } else if($row["playing"] == 0) {
+                                            echo "<a class='not_playing' href='' title='영화 예매하기'>상영예정</a>";
+                                        }
                                     echo "</div>";
                                 echo "</li>";
                                 $rank++;
