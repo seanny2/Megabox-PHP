@@ -25,7 +25,7 @@
                     <a href="/pages/movie/movie.php" title="영화">영화</a>
                     <div class="sub_menu">
                         <a href="/pages/movie/movie.php" title="전체영화">전체영화</a>
-                        <a href="" title="큐레이션">큐레이션</a>
+                        <a href="/pages/movie/curation.php" title="큐레이션">큐레이션</a>
                         <a href="" title="무비포스트">무비포스트</a>
                     </div>
                 </li>
@@ -45,14 +45,14 @@
                     </div>
                 </li>
                 <li>
-                    <a href="" title="이벤트">이벤트</a>
+                    <a href="/pages/event/event.php" title="이벤트">이벤트</a>
                     <div class="sub_menu">
-                        <a href="" title="진행중 이벤트">진행중 이벤트</a>
-                        <a href="" title="지난 이벤트">지난 이벤트</a>
-                        <a href="" title="당첨자발표">당첨자발표</a>
+                        <a href="/pages/event/event.php" title="진행중 이벤트">진행중 이벤트</a>
+                        <a href="/pages/event/lastevent.php" title="지난 이벤트">지난 이벤트</a>
+                        <a href="/pages/event/winner.php" title="당첨자발표">당첨자발표</a>
                     </div>
                 </li>
-                <li>
+                <li class="disabled">
                     <a href="" title="스토어">스토어</a>
                 </li>
                 <li>
@@ -77,8 +77,8 @@
                 <dt>영화</dt>
                 <dd>
                     <ul>
-                        <li><a href="">전체영화</a></li>
-                        <li><a href="">큐레이션</a></li>
+                        <li><a href="/pages/movie/movie.php">전체영화</a></li>
+                        <li><a href="/pages/movie/curation.php">큐레이션</a></li>
                         <li><a href="">영화제</a></li>
                         <li><a href="">무비포스트</a></li>         
                     </ul>
@@ -107,9 +107,9 @@
                 <dt>이벤트</dt>
                 <dd>
                     <ul>
-                        <li><a href="">진행중 이벤트</a></li>
-                        <li><a href="">지난 이벤트</a></li>
-                        <li><a href="">당첨자발표</a></li>      
+                        <li><a href="/pages/event/event.php">진행중 이벤트</a></li>
+                        <li><a href="/pages/event/lastevent.php">지난 이벤트</a></li>
+                        <li><a href="/pages/event/winner.php">당첨자발표</a></li>      
                     </ul>
                 </dd>
             </dl>

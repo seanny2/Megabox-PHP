@@ -26,27 +26,29 @@
                 <article id="boxoffice_list">
                     <ul>
                     <?php
-                        for($i = 0; $i < 4; $i++) {
-                            $rank = $i + 1;
+                        $con = mysqli_connect("localhost", "root", "", "megabox") or die ("Can't access DB");
+                        $query = "SELECT * FROM movie ORDER BY reservation_rate DESC LIMIT 4;";
+                        $result = mysqli_query($con, $query);
+                        $rank = 1;
+                        while($row = mysqli_fetch_assoc($result)) {
                             echo "<li>";
                                 echo "<div class='boxoffice_poster'>";
-                                    echo "<div class='boxoffice_rank'>";
-                                        echo $rank;
-                                    echo "</div>";
-                                    echo "<img src='' alt=''>";
+                                    echo "<div class='boxoffice_rank'>".$rank."</div>";
+                                    echo "<img src='".$row["img_src"]."' alt=''>";
                                     echo "<a href='' class='metadata'>";
-                                        echo "<div class='summary'>{$rank}등 영화 줄거리</div>";
+                                        echo "<div class='summary'>".$row["summary"]."</div>"; 
                                         echo "<div class='evaluation'>";
                                             echo "<p>관람평</p>";
-                                            echo "<p>{$rank}</p>";
+                                            echo "<p>".$row["like_rate"]."</p>";
                                         echo "</div>";
                                     echo "</a>";
                                 echo "</div>";
                                 echo "<div class='btn_util'>";
-                                    echo "<a href=''>{$rank}</a>";
+                                    echo "<a href=''>".$row["like_num"]."</a>";
                                     echo "<a href='' title='영화 예매하기'>예매</a>";
                                 echo "</div>";
                             echo "</li>";
+                            $rank++;
                         }
                     ?>
                     </ul>

@@ -57,10 +57,10 @@ body {
     color: white;
     cursor: pointer;
 }
-.main_bg #second-line #categories ul > li:hover > a {
+.main_bg #second-line #categories ul > li:not(.disabled):hover > a {
     border-bottom: 3px solid #fff;
 }
-.main_bg #second-line #categories ul > li:hover::before {
+.main_bg #second-line #categories ul > li:not(.disabled):hover::before {
     content: "";
     width: 2000vw;
     min-width: 100vw;
@@ -108,13 +108,10 @@ body {
     color: black;
     cursor: pointer;
 }
-.no_bg #second-line #categories ul > li > .sub_menu > a {
-    color: white;
-}
-.no_bg #second-line #categories ul > li:hover > a {
+.no_bg #second-line #categories ul > li:not(.disabled):hover > a {
     border-bottom: 4px solid #619caf;
 }
-.no_bg #second-line #categories ul > li:hover::before {
+.no_bg #second-line #categories ul > li:not(.disabled):hover::before {
     content: "";
     width: 2000vw;
     min-width: 100vw;
@@ -161,10 +158,14 @@ header #first-line {
     justify-content: space-between;
 }
 header #first-line #left-link a {
-    margin-right: 20px
+    margin-right: 20px;
 }
 header #first-line #right-link a {
-    margin-left: 20px
+    margin-left: 20px;
+}
+header #first-line #left-link a:hover,
+header #first-line #right-link a:hover {
+    text-decoration: underline;
 }
 
 header #second-line {
@@ -328,6 +329,12 @@ header #sitemap #sitemap_list dl dd ul li a:hover {
     color: #339eb2;
     text-decoration: underline;
 }
+header #second-line #categories ul > li > .sub_menu > a {
+    color: white;
+}
+header #second-line #categories ul > li > .sub_menu > a:hover {
+    text-decoration: underline;
+}
 
 /* footer */
 footer {
@@ -335,6 +342,7 @@ footer {
     min-width: 1100px;
     height: 200px;
     background-color: #f8f8fa;
+    margin-top: 100px;
 }
 footer #footer_top {
     padding: 30px 0;

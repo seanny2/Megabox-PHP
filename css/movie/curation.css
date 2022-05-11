@@ -1,40 +1,196 @@
 /* movie_common 메뉴 item 폭 */
 #contents_inner #contents_menu li {
-    width: 220px;
+    width: 33.334%;
 }
 
-#contents_inner #movie_search {
+#contents_inner > p {
+    position: relative;
+    padding-left: 8px;
+    margin-bottom: 40px;
+}
+#contents_inner > p::before,
+#contents_inner #info_box #info_text li::before,
+#contents_inner #info_contents > div .con_inner > ul li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background-color: #503396;
+    width: 3px;
+    height: 3px;
+}
+
+#contents_inner #info_box {
+    padding: 30px 40px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid #d8d9db;
+    border-radius: 10px;
+}
+#contents_inner #info_box #info_title h1 {
+    color: #503396;
+    margin-bottom: 15px;
+    height: 32px;
+    text-align: center;
+    font-size: 32px;
+    line-height: 32px;
+}
+#contents_inner #info_box #info_title p {
+    text-align: center;
+}
+#contents_inner #info_box #info_title p b {
+    color: #e63230;
+    font-weight: lighter;
+}
+#contents_inner #info_box #info_text {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ebebeb;
+}
+#contents_inner #info_box #info_text li {
+    position: relative;
+    padding-left: 8px;
+}
+
+#contents_inner #info_contents {
+    width: 100%;
+    height: 622px;
     display: flex;
     justify-content: space-between;
-    padding: 10px 0 15px;
 }
-#contents_inner #movie_search span {
-    color: #222;
-    line-height: 36px;
-    padding-left: 10px;
-}
-#contents_inner #movie_search #search_form {
-    width: 230px;
-    height: 36px;
-    border: 1px solid #d8d9db;
-    border-radius: 3px;
-    display: flex;
-}
-#contents_inner #movie_search #search_form input {
-    width: 197px;
+#contents_inner #info_contents > div {
+    width: 530px;
     height: 100%;
-    padding: 0 10px;
+    border: 1px solid #d8d9db;
+    border-radius: 10px;
 }
-#contents_inner #movie_search #search_form button {
-    width: 30px;
-    height: 32px;   
-    background: url(/img/movie/ico_search.png) no-repeat center;
+#contents_inner #info_contents > div .con_title {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    padding: 0 30px;
+    background: url(/img/movie/curation_info-title_bg.png);
+}
+#contents_inner #info_contents > div .con_title img {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 114px;
+    height: 125px;
+}
+#contents_inner #info_contents > div .con_title p {
+    width: 100%;
+    height: 106px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#contents_inner #info_contents > div .con_title p span {
+    font-size: 20px;
+    height: 23px;
+}
+#contents_inner #info_contents > div .con_title p strong {
+    font-size: 36px;
+    height: 36px;
+    letter-spacing: -3px;
+}
+#contents_inner #info_contents > div .con_inner {
+    width: 100%;
+    height: 470px;
+    padding: 25px 30px;
+    position: relative;
+}
+#contents_inner #info_contents > div .con_inner p {
+    width: 100%;
+    height: 82px;
+}
+#contents_inner #info_contents > div .con_inner p strong {
+    display: block;
+    width: 100%;
+    height: 37px;
+    padding-bottom: 15px;
+    font-size: 20px;;
+}
+#contents_inner #info_contents > div .con_inner .membership {
+    margin-top: 20px;
+    padding: 20px 0;
+    border: 1px solid #f2f4f5;
+    border-width: 1px 0 1px 0;
+}
+#contents_inner #info_contents > div .con_inner .membership h3 {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    letter-spacing: 0px;
+}
+#contents_inner #info_contents > div .con_inner .membership ul li {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin-left: 24px;
+}
+#contents_inner #info_contents > div .con_inner .membership ul li::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+}
+#contents_inner #info_contents > div .con_inner > ul {
+    margin-top: 20px;
+    height: 100%;
+}
+#contents_inner #info_contents > div .con_inner > ul li {
+    position: relative;
+    padding-left: 8px;
+}
+#contents_inner #info_contents > div .con_inner .con_btn {
+    width: 100%;
+    height: 89px;
+    padding: 23px 0 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#contents_inner #info_contents > div .con_inner .con_btn button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 36px;
+    color: #fff;
+    margin: 0 3px;
+    padding: 0 15px;
+    text-align: center;
+    cursor: pointer;
 }
 
+#contents_inner #info_contents #film_con .con_title,
+#contents_inner #info_contents #film_con .con_inner .membership h3 {
+    color: #e83c30;
+}
+#contents_inner #info_contents #classic_con .con_title,
+#contents_inner #info_contents #classic_con .con_inner .membership h3 {
+    color: #01738b;
+}
+#contents_inner #info_contents #film_con .con_inner .con_btn button {
+    background-color: #e83c30;
+}
+#contents_inner #info_contents #classic_con .con_inner .con_btn button {
+    background-color: #01738b;
+}
+
+/* movie list */
 #contents_inner #movie_list {
     width: 100%;
     height: auto;
     display: inline-block;
+    margin-top: 60px;
 }
 #contents_inner #movie_list li {
     width: 230px;
@@ -235,4 +391,26 @@
     text-align: center;
     letter-spacing: -2px;
     border: 1px solid #f5f5f5;
+}
+
+
+#events h2 {
+    padding-bottom: 16px;
+    font-size: 24px;
+    color: #503396;
+}
+#events ul {
+    display: flex;
+    justify-content: space-between;
+}
+#events ul li {
+    width: 535px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+#events ul li img {
+    width: 100%;
+    height: 100%;
 }
