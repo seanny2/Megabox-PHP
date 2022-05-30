@@ -14,7 +14,6 @@
                     <div class="sub_menu">
                         <a href="/pages/movie/movie.php" title="전체영화">전체영화</a>
                         <a href="/pages/movie/curation.php" title="큐레이션">큐레이션</a>
-                        <a href="" title="무비포스트">무비포스트</a>
                     </div>
                 </li>
                 <li>

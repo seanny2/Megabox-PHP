@@ -6,7 +6,7 @@
                 <?php
                     $con = mysqli_connect("localhost", "root", "", "megabox") or die ("Can't access DB");
         
-                    $query = "SELECT * FROM event where division='추천' ORDER BY startDate DESC;";
+                    $query = "SELECT * FROM event where division='추천' AND endDate > date(now()) ORDER BY startDate DESC;";
                     $result = mysqli_query($con, $query);
                     include("./event/event_list.php");
                 ?>
@@ -22,7 +22,7 @@
     </div>
     <ul class="event_list">
         <?php
-            $query = "SELECT * FROM event where division='메가Pick' ORDER BY startDate DESC LIMIT 4;";
+            $query = "SELECT * FROM event where division='메가Pick' AND endDate > date(now()) ORDER BY startDate DESC LIMIT 4;";
             $result = mysqli_query($con, $query);
             include("./event/event_list.php");
         ?>
@@ -36,7 +36,7 @@
     </div>
     <ul class="event_list">
         <?php
-            $query = "SELECT * FROM event where division='영화' ORDER BY startDate DESC LIMIT 4;";
+            $query = "SELECT * FROM event where division='영화' AND endDate > date(now()) ORDER BY startDate DESC LIMIT 4;";
             $result = mysqli_query($con, $query);
             include("./event/event_list.php");
         ?>
@@ -50,7 +50,7 @@
     </div>
     <ul class="event_list">
         <?php
-            $query = "SELECT * FROM event where division='극장' ORDER BY startDate DESC LIMIT 4;";
+            $query = "SELECT * FROM event where division='극장' AND endDate > date(now()) ORDER BY startDate DESC LIMIT 4;";
             $result = mysqli_query($con, $query);
             include("./event/event_list.php");
         ?>
@@ -64,7 +64,7 @@
     </div>
     <ul class="event_list">
         <?php
-            $query = "SELECT * FROM event where division='제휴/할인' ORDER BY startDate DESC LIMIT 4;";
+            $query = "SELECT * FROM event where division='제휴/할인' AND endDate > date(now()) ORDER BY startDate DESC LIMIT 4;";
             $result = mysqli_query($con, $query);
             include("./event/event_list.php");
         ?>
@@ -78,7 +78,7 @@
     </div>
     <ul class="event_list">
         <?php
-            $query = "SELECT * FROM event where division='시사회/무대인사' ORDER BY startDate DESC LIMIT 4;";
+            $query = "SELECT * FROM event where division='시사회/무대인사' AND endDate > date(now()) ORDER BY startDate DESC LIMIT 4;";
             $result = mysqli_query($con, $query);
             include("./event/event_list.php");
         ?>

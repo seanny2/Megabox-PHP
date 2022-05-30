@@ -205,8 +205,8 @@ header #header_body #categories ul > li:nth-child(4) > a {
 header #header_body #categories ul > li > .sub_menu {
     display: none;
     position: absolute;
-    top: 25px;
-    height: 60px;
+    top: 15px;
+    height: 90px;
     width: 100%;
     z-index: 5;
 }
@@ -214,7 +214,7 @@ header #header_body #categories ul > li:hover .sub_menu {
     display: block;
 }
 header #header_body #categories ul > li:nth-child(1) > .sub_menu {
-    padding-left: 70px;
+    padding-left: 110px;
 }
 header #header_body #categories ul > li:nth-child(2) > .sub_menu {
     padding-left: 170px;
@@ -228,7 +228,7 @@ header #header_body #categories ul > li:nth-child(4) > .sub_menu {
 header #header_body #categories ul > li > .sub_menu > a {
     position: initial;
     display: inline-block;
-    margin: 12px 10px;
+    margin: 20px 10px;
     line-height: 44px;
     font-weight: bold;
     z-index: 6;

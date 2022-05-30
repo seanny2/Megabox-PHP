@@ -46,30 +46,30 @@
                             break;
                         case 2:
                             if($s_title) {
-                                $query = "SELECT * FROM movie where playing=0 and special=0 and title like '%{$s_title}%' ";
+                                $query = "SELECT * FROM movie where release_date > date(now()) and title like '%{$s_title}%' ";
                             } else {
-                                $query = "SELECT * FROM movie where playing=0 and special=0 ORDER BY reservation_rate DESC";
+                                $query = "SELECT * FROM movie where release_date > date(now()) ORDER BY reservation_rate DESC";
                             }
                             break;
                         case 3:
                             if($s_title) {
-                                $query = "SELECT * FROM movie where special=1 and title like '%{$s_title}%'";
+                                $query = "SELECT * FROM movie where division='special' and title like '%{$s_title}%'";
                             } else {
-                                $query = "SELECT * FROM movie where special=1 ORDER BY reservation_rate DESC";
+                                $query = "SELECT * FROM movie where division='special' ORDER BY reservation_rate DESC";
                             }
                             break;
                         case 4:
                             if($s_title) {
-                                $query = "SELECT * FROM movie where society='film' and title like '%{$s_title}%'";
+                                $query = "SELECT * FROM movie where division='film' and title like '%{$s_title}%'";
                             } else {
-                                $query = "SELECT * FROM movie where society='film' ORDER BY reservation_rate DESC";   
+                                $query = "SELECT * FROM movie where division='film' ORDER BY reservation_rate DESC";   
                             }
                             break;
                         case 5:
                             if($s_title) {
-                                $query = "SELECT * FROM movie where society='classic' and title like '%{$s_title}%'";
+                                $query = "SELECT * FROM movie where division='classic' and title like '%{$s_title}%'";
                             } else {
-                                $query = "SELECT * FROM movie where society='classic' ORDER BY reservation_rate DESC";
+                                $query = "SELECT * FROM movie where division='classic' ORDER BY reservation_rate DESC";
                             }
                             break;
                         default:
@@ -82,7 +82,7 @@
                     <span><b><?=$cnt?></b> 개의 영화가 검색되었습니다.</span>
                     <form id="search_form" action="" method="get">
                         <input type="hidden" name="mpage" value="<?=$mpage?>" />
-                        <input type="text" placeholder="영화명 검색" name="title">
+                        <input type="text" placeholder="영화명 검색" name="title" value=<?=$s_title?>>
                         <button type="submit"></button>
                     </form>
                 </div>
@@ -90,13 +90,13 @@
                     <?php
                         if($cnt > 0) {
                             $rank = 1;
-                            while($row = mysqli_fetch_assoc($result)) {
+                            while($row = mysqli_fetch_assoc($result)) { 
                             ?>
                             <li>
                                 <div class="movie_poster">
                                     <div class="movie_rank"><?=$rank?></div>
                                     <img src="<?=$row["img_src"]?>" alt="">
-                                    <a href="" class="poster_shadow">
+                                    <a href="/pages/movie/comment/comment.php?movie=<?=$row["num"]?>" class="poster_shadow">
                                         <div class="summary"><?=$row["summary"]?></div>
                                         <div class="evaluation">
                                             <p>관람평</p>
@@ -109,18 +109,22 @@
                                     <dd>
                                         <p>예매율 <?=$row["reservation_rate"]?> %</p>
                                         <?php 
-                                            $db_date = (string)$row["release_date"];
-                                            $cut_date = explode("-", $db_date);
+                                            $release_date = (string)$row["release_date"];
+                                            $cut_date = explode("-", $release_date);
                                         ?>
                                         <p>개봉일 <?=$cut_date[0]?>.<?=$cut_date[1]?>.<?=$cut_date[2]?>.</p>
                                     </dd>
                                 </dl>
                                 <div class="btn_util">
                                     <a href=""><?=$row["like_num"]?></a>
-                                    <?php if($row["playing"] == 1) { ?>
-                                        <a class='playing' href='' title='영화 예매하기'>예매</a>
-                                    <?php } else { ?>
-                                        <a class='not_playing' href='' title='영화 예매하기'>상영예정</a>
+                                    <?php
+                                        $release_date = new DateTime((string)$row["release_date"]);
+                                        $today = new DateTime(date('Y-m-d'));
+                                        $diff = date_diff($release_date, $today);
+                                        if($today < $release_date && $diff->days >= 14) { ?>
+                                            <a class='not_playing' href='' title='영화 예매하기'>상영예정</a>
+                                        <?php } else { ?>
+                                            <a class='playing' href='' title='영화 예매하기'>예매</a>
                                     <?php } ?>
                                 </div>
                             </li>

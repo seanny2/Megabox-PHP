@@ -1,6 +1,6 @@
 <div class="event_contents">
     <?php
-        $con = mysqli_connect("localhost", "root", "", "megabox") or die ("Can't access DB");
+        $con = mysqli_connect("localhost", "user1", "12345", "megabox") or die ("Can't access DB");
 
         $s_title = $_GET["title"] ?? NULL; 
         switch($epage) {
@@ -9,37 +9,37 @@
                 break;
             case 2:
                 if($s_title) {
-                    $query = "SELECT * FROM event where division='메가Pick' and title like '%{$s_title}%' ORDER BY startDate DESC;";
+                    $query = "SELECT * FROM event where division='메가Pick' AND endDate > date(now()) and title like '%{$s_title}%' ORDER BY startDate DESC;";
                 } else {
-                    $query = "SELECT * FROM event where division='메가Pick' ORDER BY startDate DESC;";
+                    $query = "SELECT * FROM event where division='메가Pick' AND endDate > date(now()) ORDER BY startDate DESC;";
                 }
                 break;
             case 3:
                 if($s_title) {
-                    $query = "SELECT * FROM event where division='영화' and title like '%{$s_title}%' ORDER BY startDate DESC;";
+                    $query = "SELECT * FROM event where division='영화' AND endDate > date(now()) and title like '%{$s_title}%' ORDER BY startDate DESC;";
                 } else {
-                    $query = "SELECT * FROM event where division='영화' ORDER BY startDate DESC;";
+                    $query = "SELECT * FROM event where division='영화' AND endDate > date(now()) ORDER BY startDate DESC;";
                 }
                 break;
             case 4:
                 if($s_title) {
-                    $query = "SELECT * FROM event where division='극장' and title like '%{$s_title}%' ORDER BY startDate DESC;";
+                    $query = "SELECT * FROM event where division='극장' AND endDate > date(now()) and title like '%{$s_title}%' ORDER BY startDate DESC;";
                 } else {
-                    $query = "SELECT * FROM event where division='극장' ORDER BY startDate DESC;";
+                    $query = "SELECT * FROM event where division='극장' AND endDate > date(now()) ORDER BY startDate DESC;";
                 }
                 break;
             case 5:
                 if($s_title) {
-                    $query = "SELECT * FROM event where division='제휴/할인' and title like '%{$s_title}%' ORDER BY startDate DESC;";
+                    $query = "SELECT * FROM event where division='제휴/할인' AND endDate > date(now()) and title like '%{$s_title}%' ORDER BY startDate DESC;";
                 } else {
-                    $query = "SELECT * FROM event where division='제휴/할인' ORDER BY startDate DESC;";
+                    $query = "SELECT * FROM event where division='제휴/할인' AND endDate > date(now()) ORDER BY startDate DESC;";
                 }
                 break;
             case 6:
                 if($s_title) {
-                    $query = "SELECT * FROM event where division='시사회/무대인사' and title like '%{$s_title}%' ORDER BY startDate DESC;";
+                    $query = "SELECT * FROM event where division='시사회/무대인사' AND endDate > date(now()) and title like '%{$s_title}%' ORDER BY startDate DESC;";
                 } else {
-                    $query = "SELECT * FROM event where division='시사회/무대인사' ORDER BY startDate DESC;";
+                    $query = "SELECT * FROM event where division='시사회/무대인사' AND endDate > date(now()) ORDER BY startDate DESC;";
                 }
                 break;
             default:

@@ -54,8 +54,8 @@
                 </article>
                 <ul id="search-link">
                     <li>
-                        <form action="" method="post">
-                            <input type="text" placeholder="영화명을 입력해 주세요">
+                        <form action="/pages/movie/movie.php" method="get">
+                            <input type="text" name="title" placeholder="영화명을 입력해 주세요">
                             <button type="submit"></button>
                         </form>
                     </li>
@@ -123,7 +123,7 @@
         <div class="wrap">
             <div class="section_title">
                 <h2>큐레이션</h2>
-                <a href="">큐레이션 더보기</a>
+                <a href="/pages/movie/curation.php">큐레이션 더보기</a>
             </div>
             <article id="curation_container">
                 <div id="curr_curation">

@@ -49,20 +49,21 @@
                     <?php
                         if($cnt > 0) {
                             while($row = mysqli_fetch_assoc($result)) {
-                                echo "<li>";
-                                    echo "<img src='".$row["img_src"]."' alt=''>";
-                                    echo "<div class='le_info'>";
-                                        echo "<p class='le_division'>".$row["division"]."</p>";
-                                        echo "<h3 class='le_title'>".$row["title"]."</h3>";
-                                        echo "<p class='le_date'>".$row["startDate"]." ~ ".$row["endDate"]."</p>";
-                                    echo "</div>";
-                                echo "</li>";
-                            }
-                        } else {
+                            ?>
+                                <li>
+                                    <img src="<?=$row["img_src"]?>" alt="">
+                                    <div class="le_info">
+                                        <p class="le_division"><?=$row["division"]?></p>
+                                        <h3 class="le_title"><?=$row["title"]?></h3>
+                                        <p class="le_date"><?=$row["startDate"]?> ~ <?=$row["endDate"]?></p>
+                                    </div>
+                                </li>
+                        <?php }
+                            } else { ?>
                             echo "<li id='no_result'>해당 이벤트가 없습니다.</li>";
-                        }
+                        <?php } mysqli_close($con); ?>
 
-                        mysqli_close($con);
+                       
                     ?>
                 </ul>
             </article>

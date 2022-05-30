@@ -3,10 +3,10 @@
 
     switch($cpage) {
         case 2:
-            $query = "SELECT * FROM movie where society='film' ORDER BY reservation_rate DESC";
+            $query = "SELECT * FROM movie where division='film' ORDER BY reservation_rate DESC";
             break;
         case 3:
-            $query = "SELECT * FROM movie where society='classic' ORDER BY reservation_rate DESC";
+            $query = "SELECT * FROM movie where division='classic' ORDER BY reservation_rate DESC";
             break;
         default:
             break;
@@ -37,18 +37,22 @@
                 <dd>
                     <p>예매율 <?=$row["reservation_rate"]?> %</p>
                     <?php 
-                        $db_date = (string)$row["release_date"];
-                        $cut_date = explode("-", $db_date);
+                        $release_date = (string)$row["release_date"];
+                        $cut_date = explode("-", $release_date);
                     ?>
                     <p>개봉일 <?=$cut_date[0]?>.<?=$cut_date[1]?>.<?=$cut_date[2]?>.</p>
                 </dd>
             </dl>
             <div class="btn_util">
                 <a href=""><?=$row["like_num"]?></a>
-                <?php if($row["playing"] == 1) { ?>
-                    <a class='playing' href='' title='영화 예매하기'>예매</a>
-                <?php } else { ?>
-                    <a class='not_playing' href='' title='영화 예매하기'>상영예정</a>
+                <?php
+                    $release_date = new DateTime((string)$row["release_date"]);
+                    $today = new DateTime(date('Y-m-d'));
+                    $diff = date_diff($release_date, $today);
+                    if($today < $release_date && $diff->days >= 14) { ?>
+                        <a class='not_playing' href='' title='영화 예매하기'>상영예정</a>
+                    <?php } else { ?>
+                        <a class='playing' href='' title='영화 예매하기'>예매</a>
                 <?php } ?>
             </div>
         </li>

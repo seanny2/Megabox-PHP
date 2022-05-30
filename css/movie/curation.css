@@ -394,6 +394,9 @@
 }
 
 
+#events {
+    margin-top: 30px;
+}
 #events h2 {
     padding-bottom: 16px;
     font-size: 24px;

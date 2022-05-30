@@ -26,7 +26,7 @@
                 <h2>당첨자발표</h2>
                 <p>응모하신 이벤트의 당첨 여부는 당첨자발표의 나의 응모결과 확인을 통해 확인하실 수 있습니다.</p>
                 <?php
-                    $con = mysqli_connect("localhost", "root", "", "megabox") or die ("Can't access DB");
+                    $con = mysqli_connect("localhost", "user1", "12345", "megabox") or die ("Can't access DB");
                     
                     $s_title = $_GET["title"] ?? NULL; 
                     if($s_title) {
@@ -66,23 +66,22 @@
                         <?php
                             if($cnt > 0) {
                                 while($row = mysqli_fetch_assoc($result)) {
-                                    echo "<tr>";
-                                        echo "<td>".$cnt."</td>";
-                                        echo "<td>".$row["division"]."</td>";
-                                        echo "<th scope='row'><a href=''>".$row["title"]."</a></th>";
-                                        $db_date = (string)$row["endDate"];
-                                        $cut_date = explode("-", $db_date);
-                                        echo "<td>".$cut_date[0].".".$cut_date[1].".".$cut_date[2]."</td>";
-                                        echo "<td class='result_btn'><a href=''>결과확인</a></td>";
-                                    echo "</tr>";
-                                    $cnt--;
-                                }
-                            } else {
-                                echo "<tr id='no_result'>해당 이벤트가 없습니다.</tr>";
-                            }
-
-                            mysqli_close($con);
-                        ?>
+                                ?>
+                                    <tr>
+                                        <td><?=$cnt?></td>
+                                        <td><?=$row["division"]?></td>
+                                        <th scope="row"><a href=""><?=$row["title"]?></a></th>
+                                        <?php
+                                            $db_date = (string)$row["endDate"];
+                                            $cut_date = explode("-", $db_date);
+                                        ?>
+                                        <td><?=$cut_date[0]?>.<?=$cut_date[1]?>.<?=$cut_date[2]?></td>
+                                        <td class="result_btn"><a href="">결과확인</a></td>
+                                    </tr>
+                                <?php $cnt--; }
+                            } else { ?>
+                                <tr id="no_result">해당 이벤트가 없습니다.</tr>
+                            <?php } mysqli_close($con); ?>
                     </tbody>
                 </table>
             </article>

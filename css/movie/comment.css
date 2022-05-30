@@ -1,0 +1,303 @@
+#movie_detail {
+    width: 100%;
+    height: 520px;
+    padding: 55px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 91px;
+}
+#movie_detail::before {
+    content: "";
+    width: 2000vw;
+    min-width: 100vw;
+    height: 100%;
+    background-color: #0f0f0f;
+    position: absolute;
+    top: 0;
+    left: -1000vw;
+    z-index: 1;
+}
+#movie_detail #bg_img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+}
+#movie_detail #bg_img img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    filter: blur(4px);
+}
+#movie_detail #bg_pattern {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: url(/img/movie/bg_comment_pattern.png) repeat-x 0 0;
+}
+#movie_detail #bg_mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,#0f0f0f 20%,rgba(15,15,15,0) 50%,#0f0f0f 80%);
+}
+#movie_detail #detail_top, #detail_bottom {
+    position: initial;
+    z-index: 5;
+}
+#movie_detail #detail_top h2{
+    padding: 15px 0 0;
+    width: 800px;
+    font-size: 46px;
+    color: white;
+}
+#movie_detail #detail_top a {
+    display: inline-block;
+    min-width: 100px;
+    height: 36px;
+    line-height: 34px;
+    margin: 20px 6px 0 0;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    text-align: right;
+    border: 1px solid #706f72;
+    border-radius: 4px;
+    background-color: transparent;
+    position: relative;
+    letter-spacing: 1px;
+}
+#movie_detail #detail_top a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 17px;
+    height: 15px;
+    background-image: url(/img/movie/ico_heart_comment_off.png);
+    margin-right: 6px;
+}
+#movie_detail #detail_top a:hover {
+    color: #222;
+    background-color: #fff;
+}
+#movie_detail #detail_top a:hover::before{
+    background-image: url(/img/movie/ico_heart_comment_on.png);
+}
+
+#movie_detail #detail_bottom ul {
+    display: flex;
+}
+#movie_detail #detail_bottom ul li {
+    display: inline-block;
+    height: 84px;
+}
+#movie_detail #detail_bottom ul li:not(li:first-child) {
+    padding-left: 35px;
+}
+#movie_detail #detail_bottom ul li h5 {
+    font-size: 14px;
+    color: #ccc;
+    padding-bottom: 15px; 
+    font-weight: 400;
+    height: 36px;
+}
+#movie_detail #detail_bottom ul li p {
+    font-size: 15px;
+    color: #ccc;
+    padding-left: 30px;
+    position: relative;
+    height: 48px;
+}
+#movie_detail #detail_bottom ul li:nth-child(1) p::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 21px;
+    height: 22px;
+    background: url(/img/movie/ico_score.png) no-repeat 0 center;
+}
+#movie_detail #detail_bottom ul li:nth-child(2) p::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 21px;
+    height: 21px;
+    background: url(/img/movie/ico_ticket.png) no-repeat 0 center;
+}
+#movie_detail #detail_bottom ul li:nth-child(3) p::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 17px;
+    background: url(/img/movie/ico_person.png) no-repeat 0 center;
+}
+#movie_detail #detail_bottom ul li p em {
+    font-size: 32px;
+    color: #fff;
+    font-style: normal;
+}
+#movie_detail #poster {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 260px;
+    height: 374px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 5;
+}
+#movie_detail #poster img {
+    width: 100%;
+    height: 100%;
+}
+
+#comments {
+    margin-top: 40px;
+}
+#comments #comments_top {
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+}
+#comments #comments_top h3{
+    display: inline;
+    font-size: 22px;
+    color: #503396;
+}
+#comments #comments_top a {
+    display: inline-block;
+    height: 36px;
+    margin: 0;
+    padding: 0 15px;
+    text-align: center;
+    line-height: 34px;
+    color: #503396;
+    font-weight: 400;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid #503396;
+    vertical-align: middle;
+    background-color: #fff;
+    cursor: pointer;
+}
+#comments #filter {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 15px;
+}
+#comments #filter p {
+    padding-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #222;
+}
+#comments #filter em {
+    font-style: normal;
+}
+#comments #filter ul {
+    display: flex;
+    padding-top: 10px;
+}
+#comments #filter ul li {
+    padding-left: 10px;
+    margin-left: 10px;
+    position: relative;
+}
+#comments #filter ul li:not(li:first-child)::before {
+    content: "";
+    width: 1px;
+    height: 12px;
+    border-left: 1px solid #d8d9db;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+}
+#comments #filter ul li a {
+    font-size: 15px;
+    color: #222;
+}
+#comments form {
+    display: flex;
+    width: 100%;
+    height: 84px;
+}
+#comments form #insert_profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 105px;
+    height: 100%;
+}
+#comments form #insert_profile img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+#comments form #insert_profile p {
+    display: inline;
+    font-size: 14px;
+    color: #444;
+    margin: 0 auto;
+    letter-spacing: 0;
+    padding-top: 10px;
+}
+#comments form #insert_box {
+    display: flex;
+    width: 993px;
+    padding-left: 30px;
+    border-radius: 0 10px 10px 10px;
+    border: 1px solid #eaeaea;
+    background-color: #fff;
+}
+#comments form #insert_box textarea {
+    width: 850px;
+    height: 100%;
+    padding: 20px 0;
+    font-size: 15px;
+}
+#comments form #insert_box textarea:focus {
+    outline: none;
+}
+#comments form #insert_box button {
+    display: block;
+    width: 143px;
+    height: 100%;
+    color: #666;
+    position: relative;
+    padding-left: 35px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: transparent;
+    font-weight: bold;
+}
+#comments form #insert_box button::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    width: 18px;
+    height: 18px;
+    background: url(/img/movie/ico_write.png);
+}
+

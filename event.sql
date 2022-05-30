@@ -1,11 +1,11 @@
 create table event (
-    id int not null auto_increment,
+    num int not null auto_increment,
     division char(10) not null,
     title char(50) not null,
     startDate date not null,
     endDate date not null,
     img_src char(30) not null,
-    primary key(id)
+    primary key(num)
 );
 
 insert into event (division, title, startDate, endDate, img_src)
