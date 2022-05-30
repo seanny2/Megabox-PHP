@@ -81,8 +81,6 @@
             $query = "SELECT * FROM event where division='시사회/무대인사' ORDER BY startDate DESC LIMIT 4;";
             $result = mysqli_query($con, $query);
             include("./event/event_list.php");
-
-            mysqli_close($con);
         ?>
     </ul>
 </section>

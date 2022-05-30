@@ -11,7 +11,6 @@
 #contents_inner .event_search span {
     color: #222;
     line-height: 36px;
-    padding-left: 10px;
 }
 #contents_inner .event_search .search_form {
     width: 230px;
@@ -177,8 +176,10 @@
 #contents_inner #event_slider #slider_container #slider_list li .event_info h4 {
     width: 360px;
     overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
     color: #222;
+    padding-right: 10px;
 }
 #contents_inner #event_slider #slider_container #slider_list li .event_info p {
     width: 170px;
@@ -187,6 +188,7 @@
     letter-spacing: 1px;
     display: flex;
     justify-content: flex-end;
+    letter-spacing: -1px;
 }
 
 /* all events section */

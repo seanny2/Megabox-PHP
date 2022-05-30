@@ -34,40 +34,38 @@ body {
     border-bottom: 1px solid rgba(255,255,255,.2);
     color: #fff;
 }
-.main_bg #first-line a {
-    color: #888;
-}
-.main_bg #second-line #link-icon label:nth-child(1){
+.main_bg #header_body #link-icon label:nth-child(1){
     left: 0;
     background: url(/img/header/sitemap_main-bg.png) center center no-repeat;
 }
-.main_bg #second-line #link-icon a:nth-child(2){
+.main_bg #header_body #link-icon a:nth-child(2){
     left: 40px;
     background: url(/img/header/search_main-bg.png) center center no-repeat;
 }
-.main_bg #second-line #link-icon a:nth-child(3){
+.main_bg #header_body #link-icon a:nth-child(3){
     right: 40px;
     background: url(/img/header/schedule_main-bg.png) center center no-repeat;
 }
-.main_bg #second-line #link-icon a:nth-child(4){
+.main_bg #header_body #link-icon a:nth-child(4){
     right: 0;
     background: url(/img/header/mymegabox_main-bg.png) center center no-repeat;
 }
-.main_bg #second-line #categories a {
+.main_bg #header_body #categories a {
     color: white;
     cursor: pointer;
+    border-bottom: 3px solid transparent;
 }
-.main_bg #second-line #categories ul > li:not(.disabled):hover > a {
+.main_bg #header_body #categories ul > li:hover > a {
     border-bottom: 3px solid #fff;
 }
-.main_bg #second-line #categories ul > li:not(.disabled):hover::before {
+.main_bg #header_body #categories ul > li:hover::before {
     content: "";
     width: 2000vw;
     min-width: 100vw;
     height: 42px;
     background-color: rgba(0,0,0,.3);
     position: absolute;
-    top: 42px;
+    top: 40px;
     left: -1000vw;
     z-index: 4;
 }
@@ -85,40 +83,38 @@ body {
     background: #fff;
     border-bottom: 1px solid #351f67;
 }
-.no_bg #first-line a {
-    color: #666;
-}
-.no_bg #second-line #link-icon label:nth-child(1){
+.no_bg #header_body #link-icon label:nth-child(1){
     left: 0;
     background: url(/img/header/sitemap_no-bg.png) center center no-repeat;
 }
-.no_bg #second-line #link-icon a:nth-child(2){
+.no_bg #header_body #link-icon a:nth-child(2){
     left: 40px;
     background: url(/img/header/search_no-bg.png) center center no-repeat;
 }
-.no_bg #second-line #link-icon a:nth-child(3){
+.no_bg #header_body #link-icon a:nth-child(3){
     right: 40px;
     background: url(/img/header/schedule_no-bg.png) center center no-repeat;
 }
-.no_bg #second-line #link-icon a:nth-child(4){
+.no_bg #header_body #link-icon a:nth-child(4){
     right: 0;
     background: url(/img/header/mymegabox_no-bg.png) center center no-repeat;
 }
-.no_bg #second-line #categories a {
+.no_bg #header_body #categories a {
     color: black;
     cursor: pointer;
+    border-bottom: 3px solid transparent;
 }
-.no_bg #second-line #categories ul > li:not(.disabled):hover > a {
+.no_bg #header_body #categories ul > li:hover > a {
     border-bottom: 4px solid #619caf;
 }
-.no_bg #second-line #categories ul > li:not(.disabled):hover::before {
+.no_bg #header_body #categories ul > li:hover::before {
     content: "";
     width: 2000vw;
     min-width: 100vw;
     height: 42px;
     background-color: #619caf;
     position: absolute;
-    top: 42px;
+    top: 40px;
     left: -1000vw;
     z-index: 4;
 }
@@ -144,109 +140,95 @@ header {
 header input {
     display: none;
 }
-header input[id="sitemap_btn"]:checked + .wrap #second-line #link-icon label {
+header input[id="sitemap_btn"]:checked + .wrap #header_body #link-icon label {
     background: url(/img/header/ico_sitemap_main-bg_close.png);
 }
 header input[id="sitemap_btn"]:checked ~ #sitemap {
     display: block;
 }
-header #first-line {
-    padding-top: 15px;
-    padding-bottom: 7px;
-    font-size: 0.8667em;
-    display: flex;
-    justify-content: space-between;
-}
-header #first-line #left-link a {
-    margin-right: 20px;
-}
-header #first-line #right-link a {
-    margin-left: 20px;
-}
-header #first-line #left-link a:hover,
-header #first-line #right-link a:hover {
-    text-decoration: underline;
-}
 
-header #second-line {
+header #header_body {
     height: auto;
     position: relative;
-}
-header #second-line #link-icon {
+    width: 100%;
     height: 100%;
 }
-header #second-line #link-icon label,
-header #second-line #link-icon a {
+header #header_body #link-icon {
+    height: 100%;
+}
+header #header_body #link-icon label,
+header #header_body #link-icon a {
     display: block;
     position: absolute;
     width: 36px;
     height: 36px;
     cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
 }
-header #second-line #categories {
+header #header_body #categories {
     width:100%;
     position: absolute;
-    top: 7px;
+    top: 57%;
+    transform: translateY(-50%);
 }
-header #second-line #categories ul {
+header #header_body #categories ul {
     display: flex;
     overflow: hidden;
 }
-header #second-line #categories ul li > a {
+header #header_body #categories ul li {
+    display: block;
+    height: 100%;
+}
+header #header_body #categories ul li > a {
     position: absolute;
     z-index: 6;
     font-size: 18px;
     font-weight: bold;
     padding-bottom: 12px;
+    top: 50%;
+    transform: translateY(-50%);
 }
-header #second-line #categories ul > li:nth-child(1) > a {
-    left: 166px;
+header #header_body #categories ul > li:nth-child(1) > a {
+    left: 170px;
 }
-header #second-line #categories ul > li:nth-child(2) > a {
-    left: 256px;
+header #header_body #categories ul > li:nth-child(2) > a {
+    left: 300px;
 }
-header #second-line #categories ul > li:nth-child(3) > a {
-    left: 345px;
+header #header_body #categories ul > li:nth-child(3) > a {
+    right: 300px;
 }
-header #second-line #categories ul > li:nth-child(4) > a {
-    right: 347px;
-}
-header #second-line #categories ul > li:nth-child(5) > a {
-    right: 241px;
-}
-header #second-line #categories ul > li:nth-child(6) > a {
-    right: 150px;
+header #header_body #categories ul > li:nth-child(4) > a {
+    right: 170px;
 }
 
-header #second-line #categories ul > li > .sub_menu {
+header #header_body #categories ul > li > .sub_menu {
     display: none;
     position: absolute;
-    top: 42px;
-    height: 42px;
+    top: 25px;
+    height: 60px;
     width: 100%;
     z-index: 5;
 }
-header #second-line #categories ul > li:hover .sub_menu {
+header #header_body #categories ul > li:hover .sub_menu {
     display: block;
 }
-header #second-line #categories ul > li:nth-child(1) > .sub_menu {
+header #header_body #categories ul > li:nth-child(1) > .sub_menu {
     padding-left: 70px;
 }
-header #second-line #categories ul > li:nth-child(2) > .sub_menu {
-    padding-left: 106px;
+header #header_body #categories ul > li:nth-child(2) > .sub_menu {
+    padding-left: 170px;
 }
-header #second-line #categories ul > li:nth-child(3) > .sub_menu {
-    padding-left: 300px;
+header #header_body #categories ul > li:nth-child(3) > .sub_menu {
+    padding-left: 685px;
 }
-header #second-line #categories ul > li:nth-child(4) > .sub_menu {
-    padding-left: 588px;
+header #header_body #categories ul > li:nth-child(4) > .sub_menu {
+    padding-left: 830px;
 }
-header #second-line #categories ul > li:nth-child(6) > .sub_menu {
-    padding-left: 834px;
-}
-header #second-line #categories ul > li > .sub_menu > a {
+header #header_body #categories ul > li > .sub_menu > a {
     position: initial;
-    margin: 0 10px;
+    display: inline-block;
+    margin: 12px 10px;
     line-height: 44px;
     font-weight: bold;
     z-index: 6;
@@ -329,10 +311,10 @@ header #sitemap #sitemap_list dl dd ul li a:hover {
     color: #339eb2;
     text-decoration: underline;
 }
-header #second-line #categories ul > li > .sub_menu > a {
+header #header_body #categories ul > li > .sub_menu > a {
     color: white;
 }
-header #second-line #categories ul > li > .sub_menu > a:hover {
+header #header_body #categories ul > li > .sub_menu > a:hover {
     text-decoration: underline;
 }
 

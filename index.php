@@ -26,31 +26,30 @@
                 <article id="boxoffice_list">
                     <ul>
                     <?php
-                        $con = mysqli_connect("localhost", "root", "", "megabox") or die ("Can't access DB");
+                        $con = mysqli_connect("localhost", "user1", "12345", "megabox") or die ("Can't access DB");
                         $query = "SELECT * FROM movie ORDER BY reservation_rate DESC LIMIT 4;";
                         $result = mysqli_query($con, $query);
                         $rank = 1;
                         while($row = mysqli_fetch_assoc($result)) {
-                            echo "<li>";
-                                echo "<div class='boxoffice_poster'>";
-                                    echo "<div class='boxoffice_rank'>".$rank."</div>";
-                                    echo "<img src='".$row["img_src"]."' alt=''>";
-                                    echo "<a href='' class='metadata'>";
-                                        echo "<div class='summary'>".$row["summary"]."</div>"; 
-                                        echo "<div class='evaluation'>";
-                                            echo "<p>관람평</p>";
-                                            echo "<p>".$row["like_rate"]."</p>";
-                                        echo "</div>";
-                                    echo "</a>";
-                                echo "</div>";
-                                echo "<div class='btn_util'>";
-                                    echo "<a href=''>".$row["like_num"]."</a>";
-                                    echo "<a href='' title='영화 예매하기'>예매</a>";
-                                echo "</div>";
-                            echo "</li>";
-                            $rank++;
-                        }
-                    ?>
+                        ?>
+                            <li>
+                                <div class="boxoffice_poster">
+                                    <div class="boxoffice_rank"><?=$rank?></div>
+                                    <img src="<?=$row["img_src"]?>" alt="">
+                                    <a href="" class="metadata">
+                                        <div class="summary"><?=$row["summary"]?></div>
+                                        <div class="evaluation">
+                                            <p>관람평</p>
+                                            <p><?=$row["like_rate"]?></p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="btn_util">
+                                    <a href="/"><?=$row["like_num"]?></a>
+                                    <a href="" title="영화 예매하기">예매</a>
+                                </div>
+                            </li>
+                        <?php $rank++; } ?>
                     </ul>
                 </article>
                 <ul id="search-link">

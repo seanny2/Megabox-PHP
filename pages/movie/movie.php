@@ -33,7 +33,7 @@
                     <li class=<?=$mpage==5 ? 'menu_selected':NULL?>><a href="/pages/movie/movie.php?mpage=5">클래식소사이어티</a></li>
                 </ul>
                 <?php
-                    $con = mysqli_connect("localhost", "root", "", "megabox") or die ("Can't access DB");
+                    $con = mysqli_connect("localhost", "user1", "12345", "megabox") or die ("Can't access DB");
 
                     $s_title = $_GET["title"] ?? NULL; 
                     switch($mpage) {
@@ -91,43 +91,45 @@
                         if($cnt > 0) {
                             $rank = 1;
                             while($row = mysqli_fetch_assoc($result)) {
-                                echo "<li>";
-                                    echo "<div class='movie_poster'>";
-                                        echo "<div class='movie_rank'>".$rank."</div>";
-                                        echo "<img src='".$row["img_src"]."' alt=''>";
-                                        echo "<a href='' class='poster_shadow'>";
-                                            echo "<div class='summary'>".$row["summary"]."</div>";
-                                            echo "<div class='evaluation'>";
-                                                echo "<p>관람평</p>";
-                                                echo "<p>".$row["like_rate"]."</p>";
-                                            echo "</div>";
-                                        echo "</a>";
-                                    echo "</div>";
-                                    echo "<dl id='movie_metadata'>";
-                                        echo "<dt>".$row["title"]."</dt>";
-                                        echo "<dd>";
-                                            echo "<p>예매율 ".$row["reservation_rate"]." %</p>";
+                            ?>
+                            <li>
+                                <div class="movie_poster">
+                                    <div class="movie_rank"><?=$rank?></div>
+                                    <img src="<?=$row["img_src"]?>" alt="">
+                                    <a href="" class="poster_shadow">
+                                        <div class="summary"><?=$row["summary"]?></div>
+                                        <div class="evaluation">
+                                            <p>관람평</p>
+                                            <p><?=$row["like_rate"]?></p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <dl id="movie_metadata">
+                                    <dt><?=$row["title"]?></dt>
+                                    <dd>
+                                        <p>예매율 <?=$row["reservation_rate"]?> %</p>
+                                        <?php 
                                             $db_date = (string)$row["release_date"];
                                             $cut_date = explode("-", $db_date);
-                                            echo "<p>개봉일 ".$cut_date[0].".".$cut_date[1].".".$cut_date[2]."</p>";
-                                        echo "</dd>";
-                                    echo "</dl>";
-                                    echo "<div class='btn_util'>";
-                                        echo "<a href=''>".$row["like_num"]."</a>";
-                                        if($row["playing"] == 1) {
-                                            echo "<a class='playing' href='' title='영화 예매하기'>예매</a>";
-                                        } else if($row["playing"] == 0) {
-                                            echo "<a class='not_playing' href='' title='영화 예매하기'>상영예정</a>";
-                                        }
-                                    echo "</div>";
-                                echo "</li>";
-                                $rank++;
+                                        ?>
+                                        <p>개봉일 <?=$cut_date[0]?>.<?=$cut_date[1]?>.<?=$cut_date[2]?>.</p>
+                                    </dd>
+                                </dl>
+                                <div class="btn_util">
+                                    <a href=""><?=$row["like_num"]?></a>
+                                    <?php if($row["playing"] == 1) { ?>
+                                        <a class='playing' href='' title='영화 예매하기'>예매</a>
+                                    <?php } else { ?>
+                                        <a class='not_playing' href='' title='영화 예매하기'>상영예정</a>
+                                    <?php } ?>
+                                </div>
+                            </li>
+                        <?php 
+                                $rank++; 
                             }
-                        } else {
-                            echo "<div id='no_result'><p>현재 상영중인 영화가 없습니다.</p></div>";
-                        }
-                        mysqli_close($con);
-                    ?>
+                        } else { ?>
+                            <div id="no_result"><p>현재 상영중인 영화가 없습니다.</p></div>
+                        <?php } mysqli_close($con); ?>
                 </ul>
             </article>
         </div>

@@ -17,7 +17,7 @@
         <div class="wrap">
             <span></span>
             <a href="/pages/event/event.php">이벤트</a>
-            <a href="/pages/movie/event.php">진행중 이벤트</a>
+            <a href="/pages/event/event.php">진행중 이벤트</a>
         </div>
     </div>
     <section class="contents">
@@ -39,6 +39,8 @@
                     } else {
                         include("./event/division.php"); 
                     }
+                    
+                    mysqli_close($con);
                 ?>
             </article>
         </div>

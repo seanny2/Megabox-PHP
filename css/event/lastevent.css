@@ -1,0 +1,93 @@
+#contents_inner > p {
+    position: relative;
+    padding-left: 8px;
+}
+#contents_inner > p::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background-color: #503396;
+    width: 3px;
+    height: 3px;
+}
+
+#contents_inner .event_search {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 15px;
+    border-bottom: 1px solid #000;
+}
+#contents_inner .event_search span {
+    color: #222;
+    line-height: 36px;
+}
+#contents_inner .event_search .search_form {
+    width: 230px;
+    height: 36px;
+    border: 1px solid #d8d9db;
+    border-radius: 3px;
+    display: flex;
+}
+#contents_inner .event_search .search_form input {
+    width: 197px;
+    height: 100%;
+    padding: 0 10px;
+}
+#contents_inner .event_search .search_form button {
+    width: 30px;
+    height: 32px;   
+    background: url(/img/movie/ico_search.png) no-repeat center;
+}
+
+#contents_inner #lastevent_list {
+    width: 100%;
+}
+#contents_inner #lastevent_list li {
+    width: 100%;
+    height: 141px;
+    padding: 20px 120px 20px 0;
+    border-bottom: 1px solid #ebebeb;
+    display: flex;
+    cursor: pointer;
+}
+#contents_inner #lastevent_list li:hover .le_info *:not(.le_date) {
+    text-decoration: underline;
+}
+#contents_inner #lastevent_list li img {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+#contents_inner #lastevent_list li .le_info {
+    position: relative;
+    width: 850px;
+    height: 100%;
+    margin-left: 20px;
+}
+#contents_inner #lastevent_list li .le_info .le_division {
+    color: #01738b;
+}
+#contents_inner #lastevent_list li .le_info .le_title {
+    font-size: 17px;
+    color: #222;
+    margin-bottom: 10px;
+    padding-top: 5px; 
+    letter-spacing: -2px;
+}
+#contents_inner #lastevent_list li .le_info .le_date {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 13px;
+    padding-top: 10px;
+    color: #666;
+    letter-spacing: 1px;
+}
+#contents_inner #lastevent_list #no_result {
+    padding: 50px 0;
+    color: #444;
+    text-align: center;
+    line-height: 40px;
+}

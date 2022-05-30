@@ -35,15 +35,10 @@
                 <?php 
                     switch($cpage) {
                         case 1:
-                            include("./curation/curation_1.html");
-                            break;
-                        case 2:
-                            include("./curation/curation_2.php");
-                            break;
-                        case 3:
-                            include("./curation/curation_2.php");
+                            include("./curation/information.html");
                             break;
                         default:
+                            include("./curation/society_list.php");
                             break;
                     } 
                 ?>

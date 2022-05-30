@@ -1,0 +1,91 @@
+#contents_inner > p {
+    position: relative;
+    padding-left: 8px;
+}
+#contents_inner > p::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background-color: #503396;
+    width: 3px;
+    height: 3px;
+}
+
+#contents_inner .event_search {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 15px;
+    border-bottom: 1px solid #000;
+}
+#contents_inner .event_search span {
+    color: #222;
+    line-height: 36px;
+}
+#contents_inner .event_search .search_form {
+    width: 230px;
+    height: 36px;
+    border: 1px solid #d8d9db;
+    border-radius: 3px;
+    display: flex;
+}
+#contents_inner .event_search .search_form input {
+    width: 197px;
+    height: 100%;
+    padding: 0 10px;
+}
+#contents_inner .event_search .search_form button {
+    width: 30px;
+    height: 32px;   
+    background: url(/img/movie/ico_search.png) no-repeat center;
+}
+
+#contents_inner #winner_list {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+    empty-cells: show;
+}
+#contents_inner #winner_list thead tr th {
+    height: 45px;
+    padding: 3px 10px;
+    color: #222;
+    border-bottom: 1px solid #eaeaea;
+    background-color: #f2f4f5;
+}
+#contents_inner #winner_list tbody tr td,
+#contents_inner #winner_list tbody tr th {
+    height: 45px;
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+    text-align: center;
+    color: #444;
+    letter-spacing: 0;
+}
+#contents_inner #winner_list tbody tr th {
+    text-align: left;
+    font-weight: 400;
+}
+#contents_inner #winner_list tbody tr th a {
+    color: #444;
+    vertical-align: middle;
+    letter-spacing: -1px;
+}
+#contents_inner #winner_list tbody tr th a:hover {
+    text-decoration: underline;
+}
+#contents_inner #winner_list tbody tr .result_btn a {
+    display: inline-block;
+    width: 70px;
+    height: 28px;
+    color: #222;
+    padding: 0 8px;
+    border: 1px solid #53565b;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 28px;
+    letter-spacing: -2px;
+}

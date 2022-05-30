@@ -1,18 +1,6 @@
 <input type="checkbox" id="sitemap_btn">
 <div class="wrap">
-    <div id="first-line">
-        <span id="left-link">
-            <a href="" title="VIP LOUNGE">VIP LOUNGE</a>
-            <a href="" title="멤버십">멤버십</a>
-            <a href="" title="고객센터">고객센터</a>
-        </span>
-        <span id="right-link">
-            <a href="" title="로그인">로그인</a>
-            <a href="" title="회원가입">회원가입</a>
-            <a href="" title="빠른예매">빠른예매</a>
-        </span>
-    </div>
-    <div id="second-line">
+    <div id="header_body">
         <div id="link-icon">
             <label for="sitemap_btn"></label>
             <a href="" title="검색"></a>
@@ -30,21 +18,6 @@
                     </div>
                 </li>
                 <li>
-                    <a href="" title="예매">예매</a>
-                    <div class="sub_menu">
-                        <a href="" title="빠른예매">빠른예매</a>
-                        <a href="" title="상영시간표">상영시간표</a>
-                        <a href="" title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="" title="극장">극장</a>
-                    <div class="sub_menu">
-                        <a href="" title="전체극장">전체극장</a>
-                        <a href="" title="특별관">특별관</a>
-                    </div>
-                </li>
-                <li>
                     <a href="/pages/event/event.php" title="이벤트">이벤트</a>
                     <div class="sub_menu">
                         <a href="/pages/event/event.php" title="진행중 이벤트">진행중 이벤트</a>
@@ -52,14 +25,18 @@
                         <a href="/pages/event/winner.php" title="당첨자발표">당첨자발표</a>
                     </div>
                 </li>
-                <li class="disabled">
-                    <a href="" title="스토어">스토어</a>
+                <li>
+                    <a href="" title="고객센터">고객센터</a>
+                    <div class="sub_menu">
+                        <a href="" title="메가박스 멤버십">공지사항</a>
+                        <a href="" title="제휴/할인">1:1문의</a>
+                    </div>
                 </li>
                 <li>
-                    <a href="" title="혜택">혜택</a>
+                    <a href="" title="혜택">로그인</a>
                     <div class="sub_menu">
-                        <a href="" title="메가박스 멤버십">메가박스 멤버십</a>
-                        <a href="" title="제휴/할인">제휴/할인</a>
+                        <a href="" title="메가박스 멤버십">로그인</a>
+                        <a href="" title="제휴/할인">회원가입</a>
                     </div>
                 </li>
             </ul>

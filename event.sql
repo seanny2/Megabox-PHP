@@ -99,7 +99,7 @@ insert into event (division, title, startDate, endDate, img_src)
 insert into event (division, title, startDate, endDate, img_src)
     values ('영화', '<극장판 귀멸의 칼날:무한열차편> 2주차 현자증정 이벤트', '2022-04-28', '2022-05-25', '/img/event/e220.jpg');
 insert into event (division, title, startDate, endDate, img_src)
-    values ('영화', '<신비한 동물들과 덤블도어의 비밀> 3주차 현장증정 이벤트', '2022-04-2', '', '/img/event/e221.jpg');
+    values ('영화', '<신비한 동물들과 덤블도어의 비밀> 3주차 현장증정 이벤트', '2022-04-2', '2022-05-25', '/img/event/e221.jpg');
 insert into event (division, title, startDate, endDate, img_src)
     values ('영화', '<중경삼림 리마스터링> 2주차 현장증정 이벤트', '2022-04-27', '2022-05-25', '/img/event/e222.jpg');
 insert into event (division, title, startDate, endDate, img_src)
@@ -114,4 +114,6 @@ insert into event (division, title, startDate, endDate, img_src)
     values ('영화', '[부가나이트] 선착순 빵원티켓', '2022-04-25', '2022-05-11', '/img/event/e227.jpg');
 
 insert into event (division, title, startDate, endDate, img_src)
-    values ('극장', '', '', '', '/img/event/e301.jpg');
+    values ('영화', '<극장판 귀멸의 칼날 : 무한열차편> 렌코쿠 생일 축하 서프라이즈 상영회', '2022-05-10', '2022-05-10', '/img/event/e601.jpg');
+insert into event (division, title, startDate, endDate, img_src)
+    values ('영화', '<서울괴담> 관람인증 이벤트', '2022-04-27', '2022-05-10', '/img/event/e602.jpg');
