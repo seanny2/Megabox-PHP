@@ -46,7 +46,7 @@ body {
     right: 40px;
     background: url(/img/header/schedule_main-bg.png) center center no-repeat;
 }
-.main_bg #header_body #link-icon a:nth-child(4){
+.main_bg #header_body #link-icon label:nth-child(4){
     right: 0;
     background: url(/img/header/mymegabox_main-bg.png) center center no-repeat;
 }
@@ -55,10 +55,10 @@ body {
     cursor: pointer;
     border-bottom: 3px solid transparent;
 }
-.main_bg #header_body #categories ul > li:hover > a {
+.main_bg #header_body #categories ul > li:not(.disable):hover > a {
     border-bottom: 3px solid #fff;
 }
-.main_bg #header_body #categories ul > li:hover::before {
+.main_bg #header_body #categories ul > li:not(.disable):hover::before {
     content: "";
     width: 2000vw;
     min-width: 100vw;
@@ -95,19 +95,19 @@ body {
     right: 40px;
     background: url(/img/header/schedule_no-bg.png) center center no-repeat;
 }
-.no_bg #header_body #link-icon a:nth-child(4){
+.no_bg #header_body #link-icon label:nth-child(4){
     right: 0;
     background: url(/img/header/mymegabox_no-bg.png) center center no-repeat;
 }
 .no_bg #header_body #categories a {
     color: black;
     cursor: pointer;
-    border-bottom: 3px solid transparent;
+    border-bottom: 4px solid transparent;
 }
-.no_bg #header_body #categories ul > li:hover > a {
+.no_bg #header_body #categories ul > li:not(.disable):hover > a {
     border-bottom: 4px solid #619caf;
 }
-.no_bg #header_body #categories ul > li:hover::before {
+.no_bg #header_body #categories ul > li:not(.disable):hover::before {
     content: "";
     width: 2000vw;
     min-width: 100vw;
@@ -140,10 +140,16 @@ header {
 header input {
     display: none;
 }
-header input[id="sitemap_btn"]:checked + .wrap #header_body #link-icon label {
+header input[id="sitemap_btn"]:checked + .wrap #header_body #link-icon label:first-child {
+    background: url(/img/header/ico_sitemap_main-bg_close.png);
+}
+header input[id="mymegabox_btn"]:checked + .wrap #header_body #link-icon label:last-child {
     background: url(/img/header/ico_sitemap_main-bg_close.png);
 }
 header input[id="sitemap_btn"]:checked ~ #sitemap {
+    display: block;
+}
+header input[id="mymegabox_btn"]:checked ~ #mymegabox {
     display: block;
 }
 
@@ -316,6 +322,138 @@ header #header_body #categories ul > li > .sub_menu > a {
 }
 header #header_body #categories ul > li > .sub_menu > a:hover {
     text-decoration: underline;
+}
+
+header #mymegabox {
+    display: none;
+    background-color: #037b94;
+    width: 100%;
+    min-width: 1100px;
+    height: 295px;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 90px;
+}
+header #mymegabox #member {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+}
+header #mymegabox #member #user_info {
+    width: 300px;
+    position: relative;
+    padding-right: 40px;
+    border-right: 1px solid rgba(255,255,255,.2);
+}
+header #mymegabox #member #user_info p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0;
+}
+header #mymegabox #member #user_info p em {
+    color: #fff;
+    font-size: 20px;
+    font-style: normal;
+    padding: 5px 0;
+}
+header #mymegabox #member #user_info a {
+    display: inline-block;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    width: 100px;
+    height: 36px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 36px;
+}
+header #mymegabox #member form {
+    width: 550px;
+    height: 100%;
+    padding-left: 40px;
+    display: flex;
+    position: relative;
+}
+header #mymegabox #member h2 {
+    width: 60px;
+    margin: auto 40px auto 0;
+    color: #fff;
+}
+header #mymegabox #member form ul {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+header #mymegabox #member form ul li {
+    display: flex;
+    margin-bottom: 5px;
+}
+header #mymegabox #member form ul li:last-child {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+}
+header #mymegabox #member form ul li:last-child input {
+    width: 50px;
+    cursor: pointer;
+}
+header #mymegabox #member form ul li h4 {
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    margin-right: 15px;
+    color: #fff;
+}
+header #mymegabox #member form ul li input {
+    display: block;
+    width: 230px;
+    height: 30px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+    padding: 0 10px;
+}
+
+
+header #mymegabox #no_member li p {
+    text-align: center;
+    font-weight: bold;
+    margin: 65px 0 20px;
+    color: #fff;
+}
+header #mymegabox #no_member li:nth-child(2) {
+    text-align: center;
+    margin-bottom: 50px;
+}
+header #mymegabox #no_member li:nth-child(2) a {
+    display: inline-block;
+    width: 120px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    font-weight: bold;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+header #mymegabox #no_member li:nth-child(3) {
+    text-align: center;
+    margin-bottom: 55px;
+}
+header #mymegabox #no_member li:nth-child(3) a {
+    text-decoration: underline;
+}
+header #mymegabox #no_member li a {
+    color: #fff;
 }
 
 /* footer */

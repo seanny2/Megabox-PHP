@@ -1,11 +1,32 @@
-<input type="checkbox" id="sitemap_btn">
+<script>
+    function check_id(){
+        var userid = document.getElementById("uid").value;
+        if(userid) {
+            url = "member_check_id.php?userid="+userid;
+            window.open(url,"IDchk","width=400,height=200");
+        } else 
+            alert("아이디를 입력하세요.");
+    }
+    function check_pw(){
+        var pw1 = document.getElementById("pw1").value;
+        var pw2 = document.getElementById("pw2").value;
+        if(pw1!=pw2)
+        {
+            alert("패스워드가 일치하지 않습니다");
+            return false;
+        }   
+        return true;
+    }
+</script>
+<input type="checkbox" id="sitemap_btn" name="stiemap">
+<input type="checkbox" id="mymegabox_btn" name="mymegabox">
 <div class="wrap">
     <div id="header_body">
         <div id="link-icon">
             <label for="sitemap_btn"></label>
             <a href="" title="검색"></a>
             <a href="" title="상영시간표"></a>
-            <a href="" title="나의 메가박스"></a>
+            <label for="mymegabox_btn"></label>
         </div>
         <nav id="categories">
             <ul>
@@ -31,12 +52,14 @@
                         <a href="" title="제휴/할인">1:1문의</a>
                     </div>
                 </li>
-                <li>
-                    <a href="" title="혜택">로그인</a>
-                    <div class="sub_menu">
-                        <a href="" title="메가박스 멤버십">로그인</a>
-                        <a href="" title="제휴/할인">회원가입</a>
-                    </div>
+                <li class="disable">
+                    <?php session_start();
+                    $userid = $_SESSION["userid"] ?? NULL;
+                    if(!$userid) { ?>
+                    <a href="/pages/login/login_form.html" title="로그인">로그인</a>
+                    <?php } else { ?>
+                    <a href="/pages/login/logout.php" title="로그아웃">로그아웃</a>
+                    <?php } ?>
                 </li>
             </ul>
         </nav>
@@ -168,5 +191,65 @@
                 </dd>
             </dl> 
         </div>
+    </div>
+</div>
+<div id="mymegabox">
+    <div class="wrap">
+        <?php 
+        if($userid) { 
+            $con = mysqli_connect("localhost", "user1", "12345", "megabox"); 	
+            $sql = "select * from member where id='$userid'";   
+            $result = mysqli_query($con, $sql); 
+            $row = mysqli_fetch_array($result);
+            $pass = $row["pass"]; 					
+            $name = $row["name"]; 
+            $email = $row["email"];
+            $last_day = $row["last_day"];				
+        
+            mysqli_close($con);    
+        ?>
+        <div id="member">
+            <div id="user_info">
+                <p>안녕하세요!</p>
+                <p><em><?=$name?></em> 회원님</p>
+                <p>마지막 접속일:<?=$last_day?></p>
+                <a href="/pages/login/logout.php">로그아웃</a>
+            </div>
+            <form action="/pages/login/member_modify.php?id=<?=$userid?>" method="post">
+                <h2>회원<br />정보<br />수정</h2>
+                <ul>
+                    <li>
+                        <h4>아이디</h4>
+                        <input type="text" name="id" id="uid" value="<?=$userid ?>" disabled>
+                    </li> 
+                    <li>
+                        <h4>비밀번호</h4>
+                        <input type="password" name="pass" id="pw1" value="<?=$pass?>" required autofocus>
+                    </li>
+                    <li>
+                        <h4>비밀번호 확인</h4>
+                        <input type="password" name="pass_confirm" id="pw2" value="<?=$pass?>" required>
+                    </li>
+                    <li>
+                        <h4>이름</h4>
+                        <input type="text" name="name" value="<?=$name?>"  required>
+                    </li>
+                    <li>
+                        <h4>이메일</h4>
+                        <input type="email" name="email" id="" value="<?=$email?>">
+                    </li>
+                    <li>
+                        <input type="submit" value="저장" onclick="check_pw()">
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <?php } else { ?>
+        <ul id="no_member">
+            <li><p>로그인 하시면 나의 메가박스를 만날 수 있어요.<br />영화를 사랑하는 당신을 위한 꼭 맞는 혜택까지 확인해 보세요!</p></li>
+            <li><a href="/pages/login/login_form.html">로그인</a></li>
+            <li><a href="/pages/login/register_form.html">혹시 아직 회원이 아니신가요?</a></li>
+        </ul>
+        <?php } ?>
     </div>
 </div>

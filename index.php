@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/common.css">
-    <title>MEET PLAY SHARE, 메가박스</title>
 </head>
 <body>
     <header class="main_bg">
@@ -151,15 +150,14 @@
                 <?php
                     $list = array("복지식당", "중경삼림", "우연과 상상", "파리의 피아니스트: 후지...");
                     for($i = 0; $i < 4; $i++) {
-                        $img_src = $i + 1;
-                        echo "<li>";
-                            echo "<div>";
-                                echo "<a href=''><img src='/img/main/curation_list_{$img_src}.jpg' alt=''></a>";
-                            echo "</div>";
-                            echo "<p>{$list[$i]}</p>";
-                        echo "</li>";
-                    }
-                ?>
+                        $img_src = $i + 1; ?>
+                        <li>
+                            <div>
+                                <a href=''><img src='/img/main/curation_list_{$img_src}.jpg' alt=''></a>
+                            </div>
+                            <p><?=$list[$i]?></p>
+                        </li>
+                    <?php } ?>
                 </ul>
             </article>
         </div>

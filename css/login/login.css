@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+input {border:none; background-color: transparent;}
+input:focus {outline:none;}
+body {
+    letter-spacing: 0;
+    line-height: 1.5;
+    font-size: 15px;
+    color: #444;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+    overflow-x: hidden;
+}
+
+/* login_form */
+#bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.04);
+}
+#login_form {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+#login_form #form_top {
+    position: relative;
+}
+#login_form #form_top h3 {
+    width: 100%;
+    height: 45px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #503396;
+    line-height: 45px;
+    padding-left: 20px;
+}
+#login_form #form_top a {
+    display: block;
+    width: 16px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: url(/img/login/btn_quit.png) no-repeat 0 0;
+    cursor: pointer;
+}
+#login_form form {
+    padding: 20px 20px 0 20px;
+}
+#login_form form ul {
+    margin: 0 auto;
+    width: 100%;
+}
+#login_form form ul li {
+    width: 100%;
+    height: 46px;
+    margin-bottom: 15px;
+    border: 1px solid #d8d9db;
+}
+#login_form form ul li:hover {
+    border: 1px solid #000;
+}
+#login_form form ul li input {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+}
+#login_form form ul li:last-child {
+    background-color: #503396;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+#login_form form ul li:last-child:hover {
+    background-color: #351f67;
+}
+#login_form form ul li:last-child input {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    line-height: 46px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+#login_form #member_link {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 30px;
+}
+#login_form #member_link li:not(li:first-child) {
+    position: relative;
+    padding-left:13px;
+    margin-left: 13px;
+}
+#login_form #member_link li:not(li:first-child)::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1px;
+    height: 16px;
+    transform: translateY(-50%);
+    background-color: #d8d9db;
+    pointer-events: none;
+}
+#login_form #member_link li a {
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+}

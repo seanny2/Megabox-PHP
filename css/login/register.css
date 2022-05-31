@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+input {border:none; background-color: transparent;}
+input:focus {outline:none;}
+body {
+    letter-spacing: 0;
+    line-height: 1.5;
+    font-size: 15px;
+    color: #444;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+    overflow-x: hidden;
+}
+
+/* login_form */
+#bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.04);
+}
+#login_form {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+#login_form #form_top {
+    position: relative;
+}
+#login_form #form_top h3 {
+    width: 100%;
+    height: 45px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #503396;
+    line-height: 45px;
+    padding-left: 20px;
+}
+#login_form #form_top a {
+    display: block;
+    width: 16px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: url(/img/login/btn_quit.png) no-repeat 0 0;
+    cursor: pointer;
+}
+#login_form form {
+    padding: 20px 20px 0 20px;
+}
+#login_form form ul {
+    margin: 0 auto;
+    width: 100%;
+}
+#login_form form ul li {
+    width: 100%;
+    margin-bottom: 15px;
+}
+#login_form form ul li h4 {
+    margin-bottom: 3px;
+}
+#login_form form ul li:not(#regist_btn):hover input:not(#check) {
+    border: 1px solid #000;
+}
+#login_form form ul #insert_id {
+    width: 
+}
+#login_form form ul li input,
+#login_form form ul #insert_id div input {
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+}
+#login_form form ul #insert_id div {
+    display: flex;
+    height: 100%;
+    position: relative;
+    padding-right: 100px;
+}
+#login_form form ul #insert_id div #check {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#login_form form ul li:not(#regist_btn) input {
+    border: 1px solid #d8d9db;
+}
+#login_form form ul #regist_btn {
+    background-color: #503396;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+#login_form form ul #regist_btn:hover {
+    background-color: #351f67;
+}
+#login_form form ul #regist_btn input {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
