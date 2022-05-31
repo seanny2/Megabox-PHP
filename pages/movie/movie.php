@@ -100,7 +100,7 @@
                                         <div class="summary"><?=$row["summary"]?></div>
                                         <div class="evaluation">
                                             <p>관람평</p>
-                                            <p><?=$row["like_rate"]?></p>
+                                            <p><?=number_format($row["like_rate"], 1)?></p>
                                         </div>
                                     </a>
                                 </div>

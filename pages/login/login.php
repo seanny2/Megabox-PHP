@@ -46,7 +46,7 @@
 
             echo("    
                 <script> 
-                    location.href='/index.php';	
+                    history.go(-2);
                 </script>   
             ");
         }
