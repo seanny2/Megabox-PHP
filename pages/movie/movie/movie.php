@@ -11,12 +11,12 @@
 </head>
 <body>
     <header class="no_bg">
-        <?php include("../../header.php"); ?>
+        <?php include("../../../header.php"); ?>
     </header>
     <div id="page_loc">
         <div class="wrap">
             <span></span>
-            <a href="/pages/movie/movie.php">영화</a>
+            <a href="/pages/movie/movie/movie.php">영화</a>
             <a href="">전체영화</a>
         </div>
     </div>
@@ -26,16 +26,16 @@
                 <h2>전체영화</h2>
                 <ul id="contents_menu">
                     <?php $mpage = $_GET["mpage"] ?? 1; ?>
-                    <li class=<?=$mpage==1 ? 'menu_selected':NULL?>><a href="/pages/movie/movie.php">박스오피스</a></li>
-                    <li class=<?=$mpage==2 ? 'menu_selected':NULL?>><a href="/pages/movie/movie.php?mpage=2">상영에정작</a></li>
-                    <li class=<?=$mpage==3 ? 'menu_selected':NULL?>><a href="/pages/movie/movie.php?mpage=3">특별상영</a></li>
-                    <li class=<?=$mpage==4 ? 'menu_selected':NULL?>><a href="/pages/movie/movie.php?mpage=4">필름소사이어티</a></li>
-                    <li class=<?=$mpage==5 ? 'menu_selected':NULL?>><a href="/pages/movie/movie.php?mpage=5">클래식소사이어티</a></li>
+                    <li class=<?=$mpage==1 ? 'menu_selected':NULL?>><a href="/pages/movie/movie/movie.php">박스오피스</a></li>
+                    <li class=<?=$mpage==2 ? 'menu_selected':NULL?>><a href="/pages/movie/movie/movie.php?mpage=2">상영에정작</a></li>
+                    <li class=<?=$mpage==3 ? 'menu_selected':NULL?>><a href="/pages/movie/movie/movie.php?mpage=3">특별상영</a></li>
+                    <li class=<?=$mpage==4 ? 'menu_selected':NULL?>><a href="/pages/movie/movie/movie.php?mpage=4">필름소사이어티</a></li>
+                    <li class=<?=$mpage==5 ? 'menu_selected':NULL?>><a href="/pages/movie/movie/movie.php?mpage=5">클래식소사이어티</a></li>
                 </ul>
                 <?php
                     $con = mysqli_connect("localhost", "user1", "12345", "megabox") or die ("Can't access DB");
 
-                    $s_title = $_GET["title"] ?? NULL; 
+                    $s_title = $_POST["title"] ?? NULL; 
                     switch($mpage) {
                         case 1:
                             if($s_title) {
@@ -80,7 +80,7 @@
                 ?>
                 <div id="movie_search">
                     <span><b><?=$cnt?></b> 개의 영화가 검색되었습니다.</span>
-                    <form id="search_form" action="" method="get">
+                    <form id="search_form" action="/pages/movie/movie/movie.php" method="post">
                         <input type="hidden" name="mpage" value="<?=$mpage?>" />
                         <input type="text" placeholder="영화명 검색" name="title" value=<?=$s_title?>>
                         <button type="submit"></button>
@@ -116,7 +116,7 @@
                                     </dd>
                                 </dl>
                                 <div class="btn_util">
-                                    <a href=""><?=$row["like_num"]?></a>
+                                    <a href="/pages/movie/movie/movie_like.php?num=<?=$row["num"]?>"><?=$row["like_num"]?></a>
                                     <?php
                                         $release_date = new DateTime((string)$row["release_date"]);
                                         $today = new DateTime(date('Y-m-d'));
@@ -140,7 +140,7 @@
     </section>
     <footer>
         <div class="wrap">
-            <?php include("../../footer.php"); ?>
+            <?php include("../../../footer.php"); ?>
         </div>
     </footer>
 </body>

@@ -60,10 +60,10 @@ body {
     cursor: pointer;
 }
 #login_form form {
-    padding: 20px 20px 0 20px;
+    padding: 10px 20px 0 20px;
 }
 #login_form form ul {
-    margin: 0 auto;
+    margin: 10px auto;
     width: 100%;
 }
 #login_form form ul li {
@@ -98,11 +98,15 @@ body {
     color: #fff;
     font-size: 16px;
 }
+#login_form form input {
+    margin-right: 5px;
+}
 
 #login_form #member_link {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 20px;
     padding-bottom: 30px;
 }
 #login_form #member_link li:not(li:first-child) {

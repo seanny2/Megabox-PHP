@@ -1,0 +1,147 @@
+#notice_search {
+    display: flex;
+    width: 840px;
+    height: 96px;
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #f2f4f5;
+    border-radius: 10px;
+}
+#notice_search label {
+    font-size: 15px;
+    padding-right: 20px;
+    color: #444;
+    font-weight: bold;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+#notice_search #search_box {
+    display: flex;
+    width: 460px;
+    height: 36px;
+    background-color: #fff;
+    border: 1px solid #d8d9db;
+    border-radius: 3px;
+}
+#notice_search #search_box input {
+    width: 427px;
+    height: 100%;
+    line-height: 36px;
+    padding: 0 10px;
+}
+#notice_search #search_box button {
+    overflow: hidden;
+    width: 30px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    border: 0;
+    text-indent: -9999px;
+    background: url(/img/service/btn_search.png) no-repeat center;
+    cursor: pointer;
+}
+
+#service_preview {
+    display: flex;
+    justify-content: space-between;
+    width: 840px;
+    margin-top: 50px;
+}
+#service_preview div {
+    width: 400px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+#service_preview div .preview_top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 42px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #555;
+}
+#service_preview div .preview_top h3 {
+    height: 42px;
+    font-size: 18px;
+    color: #222;
+    padding-bottom: 10px;
+}
+#service_preview div .preview_top a {
+    display: inline-block;
+    height: 100%;
+    color: #666;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    padding-right: 15px
+}
+#service_preview div .preview_top a::before {
+    content: "";
+    width: 7px;
+    height: 12px;
+    position: absolute;
+    top: 4px;
+    right: 0;
+    background: url(/img/service/ico_preview_arr.png) no-repeat 0 0;
+}
+#service_preview div .preview_list li {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+}
+#service_preview div .preview_list li p {
+    display: block;
+    width: 310px;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#service_preview div .preview_list li a {
+    line-height: 30px;
+    font-size: 15px;
+    letter-spacing: -1px;
+    color: #444;
+}
+#service_preview div .preview_list li a:hover {
+    text-decoration: underline;
+    color: #01738b;
+}
+#service_preview div .preview_list li span {
+    display: block;
+    width: 80px;
+    height: 100%;
+    line-height: 30px;
+    color: #777;
+    font-size: 14px;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+#service_preview #inquiry_preview .preview_list .no_member {
+    width: 100%;
+    border: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+}
+#service_preview #inquiry_preview .preview_list .no_member p {
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+#service_preview #inquiry_preview .preview_list .no_member a {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 20px;
+}

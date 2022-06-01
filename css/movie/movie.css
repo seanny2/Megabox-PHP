@@ -29,6 +29,7 @@
     width: 30px;
     height: 32px;   
     background: url(/img/movie/ico_search.png) no-repeat center;
+    cursor: pointer;
 }
 
 #contents_inner #movie_list {

@@ -31,10 +31,10 @@
         <nav id="categories">
             <ul>
                 <li>
-                    <a href="/pages/movie/movie.php" title="영화">영화</a>
+                    <a href="/pages/movie/movie/movie.php" title="영화">영화</a>
                     <div class="sub_menu">
-                        <a href="/pages/movie/movie.php" title="전체영화">전체영화</a>
-                        <a href="/pages/movie/curation.php" title="큐레이션">큐레이션</a>
+                        <a href="/pages/movie/movie/movie.php" title="전체영화">전체영화</a>
+                        <a href="/pages/movie/curation/curation.php" title="큐레이션">큐레이션</a>
                     </div>
                 </li>
                 <li>
@@ -46,10 +46,10 @@
                     </div>
                 </li>
                 <li>
-                    <a href="" title="고객센터">고객센터</a>
+                    <a href="/pages/service/service.php" title="고객센터">고객센터</a>
                     <div class="sub_menu">
-                        <a href="" title="메가박스 멤버십">공지사항</a>
-                        <a href="" title="제휴/할인">1:1문의</a>
+                        <a href="/pages/service/notice/notice.php" title="메가박스 멤버십">공지사항</a>
+                        <a href="/pages/service/inquiry/message.php" title="제휴/할인">1:1문의</a>
                     </div>
                 </li>
                 <li class="disable">
@@ -76,8 +76,8 @@
                 <dt>영화</dt>
                 <dd>
                     <ul>
-                        <li><a href="/pages/movie/movie.php">전체영화</a></li>
-                        <li><a href="/pages/movie/curation.php">큐레이션</a></li>
+                        <li><a href="/pages/movie/movie/movie.php">전체영화</a></li>
+                        <li><a href="/pages/movie/curation/curation.php">큐레이션</a></li>
                         <li><a href="">영화제</a></li>
                         <li><a href="">무비포스트</a></li>         
                     </ul>
@@ -155,10 +155,10 @@
                 <dt>고객센터</dt>
                 <dd>
                     <ul>
-                        <li><a href="">고객센터 홈</a></li>
+                        <li><a href="/pages/service/service.php">고객센터 홈</a></li>
                         <li><a href="">자주묻는질문</a></li>
-                        <li><a href="">공지사항</a></li>
-                        <li><a href="">1:1문의</a></li>     
+                        <li><a href="/pages/service/notice/notice.php">공지사항</a></li>
+                        <li><a href="/pages/service/inquiry/message.php">1:1문의</a></li>     
                         <li><a href="">단체/대관문의</a></li>     
                         <li><a href="">분실물문의</a></li>         
                     </ul>

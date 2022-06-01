@@ -35,7 +35,7 @@
                 <div id="bg_mask"></div>
                 <div id="detail_top">
                     <h2><?=$row1["title"]?></h2>
-                    <a href=""><?=$row1["like_num"]?></a>
+                    <a href="/pages/movie/movie/movie_like.php?num=<?=$movie_num?>"><?=$row1["like_num"]?></a>
                 </div>
                 <div id="detail_bottom">
                     <ul>

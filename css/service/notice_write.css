@@ -1,0 +1,81 @@
+#insert_form {
+    width: 840px;
+    border-top: 1px solid #555;
+}
+#insert_form #write_container li {
+    display: flex;
+    height: 50px;
+    border-bottom: 1px solid #d1d5dd;
+}
+#insert_form  #write_container li h4 {
+    width: 150px;
+    height: 100%;
+    line-height: 36px;
+    padding: 7px 15px;
+    background-color: #f7f8f9;
+    font-size: 15px;
+}
+#insert_form  #write_container li span {
+    display: block;
+    height: 100%;
+    padding: 7px 15px;
+}
+#insert_form #write_container li:not(li:first-child) span {
+    width: 690px;
+}
+#insert_form  #write_container li:first-child {
+    display: flex;
+}
+#insert_form #write_container li:first-child div {
+    display: flex;
+    width: 50%;
+}
+#insert_form #write_container li:first-child div select {
+    width: 100px;
+    height: 25px;
+    border: 1px solid #d1d5dd;
+    border-radius: 4px;
+    margin: auto 150px auto 15px;
+}
+#insert_form #write_container li span input {
+    width: 90%;
+    height: 35px;
+    border: 1px solid #d1d5dd;
+    border-radius: 4px;
+    margin: auto 0 auto 0;
+    padding: 0 10px;
+}
+#insert_form #write_container li#text_area {
+    width: 100%;
+    height: 258px;
+}
+#insert_form #write_container li#text_area span textarea {
+    width: 90%;
+    height: 244px;
+    border: 1px solid #d1d5dd;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#insert_form #buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px 10px;
+}
+#insert_form #buttons li {
+    width: 60px;
+    height: 30px;
+    margin-left: 10px;
+}
+#insert_form #buttons li button {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 15px;
+    background-color: #503396;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#insert_form #buttons li button:hover {
+    background-color: #351f67;
+}

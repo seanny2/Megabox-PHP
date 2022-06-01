@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/main.css?ver=1">
+    <link rel="stylesheet" href="/css/common.css?ver=1">
 </head>
 <body>
     <header class="main_bg">
@@ -35,7 +35,7 @@
                                 <div class="boxoffice_poster">
                                     <div class="boxoffice_rank"><?=$rank?></div>
                                     <img src="<?=$row["img_src"]?>" alt="">
-                                    <a href="" class="metadata">
+                                    <a href="/pages/movie/comment/comment.php?movie=<?=$row["num"]?>" class="metadata">
                                         <div class="summary"><?=$row["summary"]?></div>
                                         <div class="evaluation">
                                             <p>관람평</p>
@@ -44,7 +44,7 @@
                                     </a>
                                 </div>
                                 <div class="btn_util">
-                                    <a href="/"><?=$row["like_num"]?></a>
+                                    <a href="/pages/movie/movie/movie_like.php?num=<?=$row["num"]?>"><?=$row["like_num"]?></a>
                                     <a href="" title="영화 예매하기">예매</a>
                                 </div>
                             </li>
@@ -62,7 +62,7 @@
                         <a href="" title="상영시간표 보기">상영시간표</a>
                     </li>
                     <li>
-                        <a href="" title="박스오피스 보기">박스오피스</a>
+                        <a href="/pages/movie/movie/movie.php" title="박스오피스 보기">박스오피스</a>
                     </li>
                     <li>
                         <a href="" title="빠른예매 보기">빠른예매</a>
@@ -125,39 +125,39 @@
                 <a href="/pages/movie/curation.php">큐레이션 더보기</a>
             </div>
             <article id="curation_container">
+                <?php
+                $query = "SELECT * FROM movie WHERE division!='special' ORDER BY reservation_rate DESC LIMIT 5";
+                $result = mysqli_query($con, $query);
+                $row = mysqli_fetch_assoc($result);
+                ?>
                 <div id="curr_curation">
-                    <div id="curation_img">
-                        <a href=""><img src="/img/main/curation_img.jpg" alt=""></a>
+                    <?php 
+                        if($row["division"]=="classic") $society_mark = "classic_mark";
+                        else $society_mark = "film_mark";
+                    ?>
+                    <div id="curation_img" class="<?=$society_mark?>">
+                        <a href=""><img src="<?=$row["img_src"]?>" alt=""></a>
                         <div>
                             <a href="">상세정보</a>
                             <a href="">예매</a>
                         </div>
                     </div>
                     <div id="curation_info">
-                        <div id="curation_tag">#클래식소사이어티</div>
-                        <div id="curation_title">[오페라] 신데렐라 @The Met</div>
-                        <div id="curation_summary">
-                            믿고 보는 연출가 로랑 펠리의 천재적인 희극성.<br /></br />
-                            강단 있고 개성 넘치는 저음의 신데렐라가 보여주는 매력!!<br/><br />
-                            [상영 정보]<br />
-                            상영지점 : 센트럴 / 코엑스 / 상암월드컵경기장 / 성수 / 분당 / 킨텍스 / 대전신세계 아트앤사이언스<br />
-                            상영일정 : 2022년 4월 5일(화) ~ 5월 14일(토) / 화 19:00, 토 10:00<br />
-                            러닝타임 : 111분*인터미션 없음
-                        </div>
+                        <div id="curation_tag">#<?=$row["division"]=="classic" ? "클래식소사이어티":"필름소사이어티"?></div>
+                        <div id="curation_title"><?=$row["title"]?></div>
                     </div>
                 </div>
                 <ul id="curation_list">
-                <?php
-                    $list = array("복지식당", "중경삼림", "우연과 상상", "파리의 피아니스트: 후지...");
-                    for($i = 0; $i < 4; $i++) {
-                        $img_src = $i + 1; ?>
-                        <li>
-                            <div>
-                                <a href=''><img src='/img/main/curation_list_{$img_src}.jpg' alt=''></a>
-                            </div>
-                            <p><?=$list[$i]?></p>
-                        </li>
-                    <?php } ?>
+                <?php while($row = mysqli_fetch_assoc($result)) {
+                    if($row["division"]=="classic") $society_mark = "classic_mark";
+                    else $society_mark = "film_mark"; ?>
+                    <li>
+                        <div class="<?=$society_mark?>">
+                            <a href=""><img src="<?=$row["img_src"]?>" alt=""></a>
+                        </div>
+                        <p><?=$row["title"]?></p>
+                    </li>
+                <?php } ?>
                 </ul>
             </article>
         </div>
