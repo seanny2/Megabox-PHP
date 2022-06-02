@@ -703,7 +703,7 @@
 #information {
     width: 100%;
     min-width: 1100px;
-    padding-bottom: 50px;
+    padding-bottom: 0;
 }
 #information #info-special_list {
     display: flex;
@@ -793,17 +793,19 @@
     display: flex;
     justify-content: space-between;
 }
-#information #info_notice dl dd span:first-child {
+#information #info_notice dl dd a {
     color: #222;
     cursor: pointer;
+    letter-spacing: 0;
 }
-#information #info_notice dl dd span:first-child:hover {
+#information #info_notice dl dd a:hover {
     border-bottom: 1px solid #222;
 }
-#information #info_notice dl dd span:last-child {
+#information #info_notice dl dd span {
     color: #666;
+    letter-spacing: 0;
 }
-#information #info_notice dl a {
+#information #info_notice dl > a {
     display: inline-flex;
     width: 70px;
     height: 20px;
@@ -812,10 +814,10 @@
     margin-left: 15px;
     color: #444;
 }
-#information #info_notice dl a:hover {
+#information #info_notice dl > a:hover {
     border-bottom: 1px solid #444;
 }
-#information #info_notice dl a::after {
+#information #info_notice dl > a::after {
     content: "";
     width: 7px;
     height: 12px;
@@ -825,9 +827,9 @@
 #information #info_links {
     width: 100%;
     min-width: 1100px;
-    padding: 50px 0;
+    padding-top: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 #information #info_links li {
     width: 183px;
@@ -850,48 +852,8 @@
 }
 #information #info_links li:nth-child(2) a::before {
     content: "";
-    background: url(/img/main/ico_faq.png) 0 0 no-repeat;
-    width: 50px;
-    height: 46px;
-    margin: 0 auto 10px auto;
-}
-#information #info_links li:nth-child(3) a::before {
-    content: "";
     background: url(/img/main/ico_qna.png) 0 0 no-repeat;
     width: 43px;
     height: 43px;
     margin: 0 auto 10px auto;
-}
-#information #info_links li:nth-child(4) a::before {
-    content: "";
-    background: url(/img/main/ico_group.png) 0 0 no-repeat;
-    width: 50px;
-    height: 38px;
-    margin: 0 auto 10px auto;
-}
-#information #info_links li:nth-child(5) a::before {
-    content: "";
-    background: url(/img/main/ico_lost.png) 0 0 no-repeat;
-    width: 51px;
-    height: 39px;
-    margin: 0 auto 10px auto;
-}
-#information #info_links li:nth-child(6) a::before {
-    content: "";
-    background: url(/img/main/ico_boutique.png) 0 0 no-repeat;
-    width: 48px;
-    height: 40px;
-    margin: 0 auto 10px auto;
-}
-
-/* banner section */
-#banner {
-    width: 100%;
-    min-width: 1100px;
-    height: 227px;
-    background-color: #dff7b9;
-}
-#baaner img {
-    width: 100%;
-    height: 100%;
 }

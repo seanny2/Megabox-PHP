@@ -42,19 +42,23 @@
                     <div class="sub_menu">
                         <a href="/pages/event/event.php" title="진행중 이벤트">진행중 이벤트</a>
                         <a href="/pages/event/lastevent.php" title="지난 이벤트">지난 이벤트</a>
-                        <a href="/pages/event/winner.php" title="당첨자발표">당첨자발표</a>
                     </div>
                 </li>
                 <li>
                     <a href="/pages/service/service.php" title="고객센터">고객센터</a>
                     <div class="sub_menu">
-                        <a href="/pages/service/notice/notice.php" title="메가박스 멤버십">공지사항</a>
-                        <a href="/pages/service/inquiry/message.php" title="제휴/할인">1:1문의</a>
+                        <a href="/pages/service/notice/notice.php" title="공지사항">공지사항</a>
+                        <?php session_start();
+                        $userid = $_SESSION["userid"] ?? NULL;
+                        if($userid) { ?>
+                        <a href="/pages/service/message/message.php" title="1:1문의">1:1문의</a>
+                        <?php } else { ?>
+                        <a href="javascript:alert('로그인 후 이용할 수 있습니다!');" title="1:1문의">1:1문의</a>
+                        <?php } ?>
                     </div>
                 </li>
                 <li class="disable">
-                    <?php session_start();
-                    $userid = $_SESSION["userid"] ?? NULL;
+                    <?php 
                     if(!$userid) { ?>
                     <a href="/pages/login/login_form.html" title="로그인">로그인</a>
                     <?php } else { ?>

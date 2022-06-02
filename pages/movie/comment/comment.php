@@ -186,7 +186,7 @@
                             </dl>
                         </li>
                         <p><?=$row["regist_day"]?></p>
-                        <?php } ?>
+                        <?php } mysqli_close($con); ?>
                     </ul>
                 </div>
             </article>

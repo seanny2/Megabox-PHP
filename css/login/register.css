@@ -73,13 +73,10 @@ body {
 #login_form form ul li h4 {
     margin-bottom: 3px;
 }
-#login_form form ul li:not(#regist_btn):hover input:not(#check) {
+#login_form form ul li:not(#regist_btn, #by_manager):hover input:not(#check) {
     border: 1px solid #000;
 }
-#login_form form ul #insert_id {
-    width: 
-}
-#login_form form ul li input,
+#login_form form ul li:not(#by_manager) input,
 #login_form form ul #insert_id div input {
     width: 100%;
     height: 36px;
@@ -99,7 +96,7 @@ body {
     margin-left: 10px;
     cursor: pointer;
 }
-#login_form form ul li:not(#regist_btn) input {
+#login_form form ul li:not(#regist_btn, #by_manager) input {
     border: 1px solid #d8d9db;
 }
 #login_form form ul #regist_btn {

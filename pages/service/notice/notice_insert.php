@@ -23,15 +23,15 @@
 	$subject = htmlspecialchars($subject, ENT_QUOTES);
 	$content = htmlspecialchars($content, ENT_QUOTES);
 
-	$regist_day = date("Y-m-d (H:i)");  // 현재의 '년-월-일-시-분'을 저장
+	$regist_day = date("Y-m-d (H:i)");  
 	
 	$con = mysqli_connect("localhost", "user1", "12345", "megabox");
 
 	$sql = "INSERT INTO notice (theater, division, subject, content, regist_day) 
             VALUES ('$theater', '$division', '$subject', '$content', '$regist_day')";
-	mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행
+	mysqli_query($con, $sql);  
 
-	mysqli_close($con);                // DB 연결 끊기
+	mysqli_close($con);               
 
 	echo "
 	    <script>

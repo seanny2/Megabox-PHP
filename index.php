@@ -19,8 +19,8 @@
         <div class="wrap">
             <section id="boxoffice">
                 <div id="boxoffice_title">
-                    <a href="" title="박스오피스">박스오피스</a>
-                    <a href="" title="더 많은 영화보기">더 많은 영화보기</a>
+                    <a href="/pages/movie/movie/movie.php" title="박스오피스">박스오피스</a>
+                    <a href="/pages/movie/movie/movie.php" title="더 많은 영화보기">더 많은 영화보기</a>
                 </div>
                 <article id="boxoffice_list">
                     <ul>
@@ -77,8 +77,8 @@
     <section id="benefits">
         <div class="wrap">
             <div class="section_title">
-                <h2>혜택</h2>
-                <a href=""></a>
+                <h2>이벤트</h2>
+                <a href="/pages/event/event.php"></a>
             </div>
             <article id="benefits_ad">
                 <div id="benefits_slider">
@@ -122,7 +122,7 @@
         <div class="wrap">
             <div class="section_title">
                 <h2>큐레이션</h2>
-                <a href="/pages/movie/curation.php">큐레이션 더보기</a>
+                <a href="/pages/movie/curation/curation.php">큐레이션 더보기</a>
             </div>
             <article id="curation_container">
                 <?php
@@ -136,7 +136,7 @@
                         else $society_mark = "film_mark";
                     ?>
                     <div id="curation_img" class="<?=$society_mark?>">
-                        <a href=""><img src="<?=$row["img_src"]?>" alt=""></a>
+                        <a href="/pages/movie/comment/comment.php?movie=<?=$row["num"]?>"><img src="<?=$row["img_src"]?>" alt=""></a>
                         <div>
                             <a href="">상세정보</a>
                             <a href="">예매</a>
@@ -153,7 +153,7 @@
                     else $society_mark = "film_mark"; ?>
                     <li>
                         <div class="<?=$society_mark?>">
-                            <a href=""><img src="<?=$row["img_src"]?>" alt=""></a>
+                            <a href="/pages/movie/comment/comment.php?movie=<?=$row["num"]?>"><img src="<?=$row["img_src"]?>" alt=""></a>
                         </div>
                         <p><?=$row["title"]?></p>
                     </li>
@@ -178,35 +178,40 @@
         </div>
         <div id="info_notice">
             <div class="wrap">
+                <?php 
+                $query = "SELECT * FROM notice ORDER BY regist_day DESC LIMIT 1";
+                $result = mysqli_query($con, $query);
+                $row = mysqli_fetch_assoc($result);
+                $regist_day  = substr((string)$row["regist_day"], 0, 10);
+                $cut_date = explode("-", $regist_day);
+                ?>
                 <dl>
-                    <dt>지점</dt>
+                    <dt>공지사항</dt>
                     <dd>
-                        <span>[남양주현대아울렛 스페이스원] 영화 관람요금 기준 변경 안내</span>
-                        <span>2022.04.28</span>
+                        <a href="/pages/service/notice/notice_view.php?page=notice&num=<?=$row["num"]?>"><?=$row["subject"]?></a>
+                        <span><?=$cut_date[0]?>.<?=$cut_date[1]?>.<?=$cut_date[2]?></span>
                     </dd>
-                    <a href="" title="전체공지 더보기">더보기</a>
+                    <a href="/pages/service/notice/notice.php?page=notice" title="전체공지 더보기">더보기</a>
                 </dl>
             </div>
         </div>
         <div class="wrap">
             <ul id="info_links">
-                <li><a href="">고객센터</a></li>
-                <li><a href="">자주 묻는 질문</a></li>
-                <li><a href="">1:1 문의</a></li>
-                <li><a href="">단체/대관문의</a></li>
-                <li><a href="">분실물 문의/접수</a></li>
-                <li><a href="">더 부티크 프라이빗 대관예매</a></li>
+                <li><a href="/pages/service/service.php">고객센터</a></li>
+                <?php session_status() === PHP_SESSION_ACTIVE ?: session_start();
+                $userid = $_SESSION["userid"] ?? NULL;
+                if($userid) { ?>
+                <li><a href="/pages/service/message/message.php?page=message">1:1 문의</a></li>
+                <?php } else { ?>
+                <li><a href="javascript:alert('로그인 후 이용할 수 있습니다!');">1:1 문의</a></li>
+                <?php } ?>
             </ul>
         </div>
     </section>
-    <section id="banner">
-        <div class="wrap">
-            <img src="/img/main/footer_banner.jpg" alt="">
-        </div>
-    </section>
+    
     <footer>
         <div class="wrap">
-            <?php include("./footer.php"); ?>
+            <?php include("./footer.php");  mysqli_close($con); ?>
         </div>
     </footer>
 </body>

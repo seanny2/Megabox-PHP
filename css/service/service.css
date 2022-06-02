@@ -103,7 +103,7 @@
 #service_preview div .preview_list li a {
     line-height: 30px;
     font-size: 15px;
-    letter-spacing: -1px;
+    letter-spacing: 0;
     color: #444;
 }
 #service_preview div .preview_list li a:hover {
@@ -121,7 +121,7 @@
     text-align: center;
 }
 
-#service_preview #inquiry_preview .preview_list .no_member {
+#service_preview #inquiry_preview .preview_list .blank {
     width: 100%;
     border: 1px solid #eaeaea;
     display: flex;
@@ -129,7 +129,7 @@
     justify-content: center;
     height: 150px;
 }
-#service_preview #inquiry_preview .preview_list .no_member p {
+#service_preview #inquiry_preview .preview_list .blank p {
     display: block;
     width: 100%;
     height: 35px;
@@ -138,7 +138,7 @@
     font-size: 18px;
     font-weight: bold;
 }
-#service_preview #inquiry_preview .preview_list .no_member a {
+#service_preview #inquiry_preview .preview_list .blank a {
     display: block;
     height: 35px;
     line-height: 35px;

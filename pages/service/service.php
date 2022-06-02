@@ -61,28 +61,47 @@
                     <div id="inquiry_preview">
                         <div class="preview_top">
                             <h3>내 문의 내역</h3>
-                            <a href="/pages/service/inquiry/message.php?page=inquiry">더보기</a>
+                            <?php $userid = $_SESSION["userid"] ?? NULL;
+                            if ($userid) { ?>
+                            <a href="/pages/service/message/message.php?page=message">더보기</a>
+                            <?php } else { ?>
+                            <a href="javascript:alert('로그인 후 이용할 수 있습니다!');">더보기</a>
+                            <?php } ?>
                         </div>
                         <ul class="preview_list">
-                            <?php session_status() === PHP_SESSION_ACTIVE ?: session_start();
-                            $userid = $_SESSION["userid"] ?? NULL;
+                            <?php
                             if($userid) { 
                                 $query = "SELECT * FROM message ORDER BY regist_day DESC LIMIT 5;";
                                 $result = mysqli_query($con, $query);
-                                while($row=mysqli_fetch_array($result)) { 
-                                $regist_day = substr((string)$row["regist_day"], 0, 10);
-                                $cut_date = explode("-", $regist_day); ?>
-                                <li>
-                                    <a href=""></a>
-                                    <span></span>
-                                </li>
+                                $cnt = mysqli_num_rows($result);
+                                if($cnt > 0) {
+                                    while($row=mysqli_fetch_array($result)) { 
+                                    $regist_day = substr((string)$row["regist_day"], 0, 10);
+                                    $cut_date = explode("-", $regist_day); ?>
+                                    <li>
+                                        <a href="/pages/service/message/message.php?page=message&num=<?=$row["num"]?>"><?=$row["subject"]?></a>
+                                        <span><?=$cut_date[0]?>.<?=$cut_date[1]?>.<?=$cut_date[2]?></span>
+                                    </li>
+                                    <?php } ?>   
+                                <?php } else { ?>
+                                    <li class="blank">
+                                        <p>문의 내역이 없습니다.</p>
+                                        <?php 
+                                        $query = "select id from manager where id='$userid';";
+                                        $result = mysqli_query($con, $query);
+                                        if($row = mysqli_fetch_array($result)) { ?>
+                                            <a href="javascript:alert('관리자는 문의할 수 없습니다!')">문의하러 가기</a>
+                                        <?php } else { ?> 
+                                            <a href="/pages/service/message/message_write.php?page=message">문의하러 가기</a>
+                                        <?php } ?>
+                                    </li>
                                 <?php } ?>
                             <?php } else { ?>
-                            <li class="no_member">
+                            <li class="blank">
                                 <p>로그인 후 이용할 수 있습니다!</p>
                                 <a href="/pages/login/login_form.html">로그인</a>
                             </li>
-                            <?php } ?>
+                            <?php } mysqli_close($con);?>
                         </ul>
                     </div>
                 </section>

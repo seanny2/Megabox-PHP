@@ -6,6 +6,6 @@
 
    echo "
    <script>
-      history.go(-1);
+      location.href='/index.php';
    </script> ";
 ?>

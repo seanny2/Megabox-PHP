@@ -8,6 +8,7 @@
     $like_up = (int)$row["like_num"] + 1;
     $sql = "UPDATE comment SET like_num=$like_up WHERE num=$num;";
     mysqli_query($con, $sql);
+    mysqli_close($con);
 
     echo "
         <script>

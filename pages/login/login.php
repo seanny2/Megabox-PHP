@@ -2,7 +2,6 @@
 <?php
     $id = $_POST["id"];
     $pass = $_POST["pass"];
-    $manager = (int)$_POST["manager"];
     $last_day = date("Y-m-d (H:i)");
     
     /* db 연결 */
@@ -43,8 +42,7 @@
             session_start();  				 
             $_SESSION["userid"] = $row["id"];   
             $_SESSION["username"] = $row["name"];  
-            $_SESSION["userpoint"] = $row["point"];
-            $_SESSION["manager"] = $manager;          
+            $_SESSION["userpoint"] = $row["point"];       
 
             echo("    
                 <script> 
